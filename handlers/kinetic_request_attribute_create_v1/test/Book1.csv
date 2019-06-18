@@ -1,0 +1,5 @@
+Service Item Name,Category1,Category2,IncidentTemplate,badAttr
+Bridge Clone,Test,Category,MyIncTemplate,test
+Bad Item,Test,Cat2,thisIncTemplate,this
+Bridge Source,Test,Cat2,YourIncTemplate,this
+

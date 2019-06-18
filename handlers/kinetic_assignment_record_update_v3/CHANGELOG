@@ -1,0 +1,8 @@
+kinetic_assignment_record_update_V3 (2013-02-19)
+* Added field for Status
+
+kinetic_assignment_record_update_V2 (2012-01-08)
+* Added fields for Work Order Due Date and Priority
+
+kinetic_assignment_record_update_V1 (2012-10-16)
+* Initial version.  See README for details.

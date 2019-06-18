@@ -1,0 +1,95 @@
+require 'rake'
+require 'rake/gempackagetask'
+require 'rake/rdoctask'
+require 'rake/testtask'
+
+#
+# DEFAULT - Set the rake default
+#
+
+# Include the test unit tasks
+desc "Default: Run all test tasks."
+task :default => 'test:all'
+
+#
+# RDOC - ArsModels rdoc configuration
+#
+
+# Include the rdoc tasks
+Rake::RDocTask.new do |rdoc|
+  files =['README', 'CHANGELOG', 'lib/**/*.rb']
+  rdoc.rdoc_files.add(files)
+  rdoc.main = "README"
+  rdoc.title = "ArsModels Ruby Library"
+  rdoc.rdoc_dir = 'doc'
+  rdoc.options << '--line-numbers' << '--inline-source'
+end
+
+
+#
+# TESTS - ArsModels test rake task configuration
+#
+
+# Include the test unit tasks
+Rake::TestTask.new(:test) do |t|
+  # Raise an exception if we are specifying a TEST and SUITE
+  raise "Incompatible arguments: 'TEST' and 'SUITE'" if ENV['TEST'] && ENV['SUITE']
+
+  # Default the options
+  options = []
+  # Add the options
+  options << "--testcase=#{ENV['SUITE']}" if ENV['SUITE']
+  options << "--name=#{ENV['METHOD']}" if ENV['METHOD']
+  t.options = options.join(' ')
+
+  # Preset patterns
+  default_pattern = "#{File.dirname(__FILE__)}/test/ruby-wrapper/**/*_test.rb"
+  patterns = {
+    :canonical => "#{File.dirname(__FILE__)}/test/ruby-wrapper/canonical/**/*_test.rb",
+    :crud => "#{File.dirname(__FILE__)}/test/ruby-wrapper/crud/**/*_test.rb",
+    :unit => "#{File.dirname(__FILE__)}/test/ruby-wrapper/unit/**/*_test.rb"
+  }
+  pattern = ENV['GROUP'] ? patterns[ENV['GROUP'].to_sym] || default_pattern : default_pattern
+
+  # Set the pattern of test names to execute, default to all tests
+  t.pattern = pattern 
+end
+
+
+#
+# KAKE - Kinetic Make
+#
+
+# If the kake gem is installed
+if Gem.available?('kake')
+  # Kake is the Kinetic Make build helper gem.  This is only required for
+  # application development tasks such as building the application RDOC or gem.
+  require 'kake'
+
+  # Include the kake gem tasks
+  Kake::KakeTask.new do |task|
+    task.dependencies = [:rdoc]
+    task.gem_command = 'jruby -S gem'
+    task.spec = Gem::Specification.new do |s|
+      s.name = 'ars-models'
+      s.summary = 'Ruby wrapper library for the kinetic ArsModels.'
+      s.description = <<-EOF
+        The Ars Models Ruby package is a JRuby wrapper implementations of the Kinetic
+        Ars Models Java source classes, which simplify Ars interactions by exposing
+        abstracted CRUD methods for common Ars objects.  The Ruby models wrap Java calls
+        to implement common Ruby paradigms, such as a method accepting a hash of
+        options, and to convert the results from Java to Ruby datatypes.
+      EOF
+      s.version = File.open('config/VERSION', 'r') {|f| f.read }
+      s.has_rdoc = true
+      s.extra_rdoc_files = ['README', 'CHANGELOG']
+      s.rdoc_options << '--line-numbers' << '--inline-source' << '--main' << "README"
+      s.author = 'Ben Christenson'
+      s.email = 'ben.christenson@kineticdata.com'
+      s.homepage = 'http://www.kineticdata.com'
+      s.files = %w(CHANGELOG README Rakefile init.rb) + Dir.glob("{conf,doc,lib,test}/**/*")
+      s.require_path = "lib"
+      s.rubyforge_project = 'N/A'
+    end
+  end
+end

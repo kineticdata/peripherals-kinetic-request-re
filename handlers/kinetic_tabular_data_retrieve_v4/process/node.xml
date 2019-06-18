@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_tabular_data_retrieve" name="Kinetic Tabular Data Retrieve" schema_version="1.0" version="4">
+    <author>anne.ramey@kineticdata.com</author>
+    <description>
+	    Retrieves a single CUSTOM:KS_SRV_TableData_base entry/saved table row with the 
+		instance id specified.
+	</description>
+    <helpurl>http://community.kineticdata.com/</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="instance_id" label="Instance ID:" required="true" 
+		  tooltip="The instance id associated to the Table Data record to retrieve"/>
+    </parameters>
+    <handler name="kinetic_tabular_data_retrieve" version="4">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+			<info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="instance_id">&lt;%= @parameters['instance_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="CustomerSurveyInstanceID"/>
+		<result name="SurveyInstanceID"/>
+        <result name="Survey_Template_Name"/>
+        <result name="Table Name"/>
+        <result name="Label1"/>
+        <result name="Value1"/>
+        <result name="Label2"/>
+        <result name="Value2"/>
+        <result name="Label3"/>
+        <result name="Value3"/>
+        <result name="Label4"/>
+        <result name="Value4"/>
+		<result name="Label5"/>
+        <result name="Value5"/>
+		<result name="Label6"/>
+        <result name="Value6"/>
+		<result name="Label7"/>
+        <result name="Value7"/>
+		<result name="Label8"/>
+        <result name="Value8"/>
+		<result name="Label9"/>
+        <result name="Value9"/>
+		<result name="Label10"/>
+        <result name="Value10"/>
+ 		<result name="Label11"/>
+        <result name="Value11"/>
+		<result name="Label12"/>
+        <result name="Value12"/>
+		<result name="Label13"/>
+        <result name="Value13"/>
+		<result name="Label14"/>
+        <result name="Value14"/>
+ 		<result name="Label15"/>
+        <result name="Value15"/>
+		<result name="Label16"/>
+        <result name="Value16"/>
+		<result name="Label17"/>
+        <result name="Value17"/>		
+		<result name="Label18"/>
+        <result name="Value18"/>
+ 		<result name="Label18"/>
+        <result name="Value19"/>
+		<result name="Label20"/>
+        <result name="Value20"/>
+	</results>
+</taskDefinition>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_submission_complete" name="Kinetic Submission Complete" schema_version="1.0" version="3">
+    <author>support@kineticdata.com</author>
+    <description>Sets a submission to complete and triggers the complete workflow, such as firing triggers</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+<parameters>
+    <parameter id="TargetInstanceID" required="true" label="Target submission instance ID" tooltip="The instanceId of the targeted submission (cart item), that should be set as complete"></parameter>
+</parameters>
+<handler name="kinetic_submission_complete" version="3">
+    <infos>
+        <info name="server">&lt;%= @info['server'] %&gt;</info>
+        <info name="username">&lt;%= @info['username'] %&gt;</info>
+        <info name="password">&lt;%= @info['password'] %&gt;</info>
+        <info name="port">&lt;%= @info['port'] %&gt;</info>
+        <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+        <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+    </infos>
+    <parameters>
+        <parameter name="CustomerSurveyInstanceId">&lt;%= @parameters['TargetInstanceID'] %&gt;</parameter>
+    </parameters>
+    <fields>
+        <field name='Status'>Completed</field>
+        <field name='_ActionOne'>GetScores</field>
+    </fields>
+</handler>
+<results format="xml">
+    <result name="Entry ID"/>
+</results>
+</taskDefinition>

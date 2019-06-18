@@ -1,0 +1,6 @@
+KineticRequest_Submission_BuildReviewRequestUrl_V1 (2014-03-07)
+* This handler is safe to use in a subtree because it does not rely on any @base 
+information to process. All data is passed into the handler as parameters.
+
+KineticRequest_Submission_BuildReviewRequestUrl_V1 (2011-03-08)
+* Initial version.  See README for details.

@@ -1,0 +1,5 @@
+KineticRequest_EmailMessage_Create_V2 (2013-10-11)
+* Second version.  
+-- Removed phantom whitespace around default value in the Originating Id.
+-- Added log method in the init.rb.
+See README for details.

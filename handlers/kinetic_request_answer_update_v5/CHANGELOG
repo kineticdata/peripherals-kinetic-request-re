@@ -1,0 +1,11 @@
+== Kinetic_Request_Answer_Update V5 (2015-12-18)
+* 5.2 version. Handles 5.2 unlimited answers.
+
+== Kinetic_Request_Answer_Update_V4 (2015-09-04)
+* Handle situation of same template name in multiple
+  catalogs
+
+== Kinetic_Request_Answer_Update_V3 (2014-08-28)
+*Removed limit on answer size from 255
+*updated handler so it will update existing or
+ create new answer

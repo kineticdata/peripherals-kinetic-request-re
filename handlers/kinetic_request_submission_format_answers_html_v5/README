@@ -1,0 +1,135 @@
+== KineticRequest_Submission_FormatAnswers_HTML
+Builds an HTML table by formatting a specified subset of answers for
+the specified Kinetic Request submission.
+
+To specify the answers to be formatted, any of the following can be configured
+(the answers will be sequenced in the normal page order of their corresponding
+questions):
+* A starting question question name ("Question" in the authoring console) (if the starting question is not provided, the
+  first question of the service item will be used).
+* An ending question question name ("Question" in the authoring console) (if the ending question is not provided, the
+  last question of the service item will be used).
+* A comma separated list of question question names ("Question" in the authoring console) to explicitely include
+  (questions included in this list will be included even if they do not exist
+  between the starting and ending questions).
+* A comma separated list of question question names ("Question" in the authoring console) to explicitely exclude
+  (questions included in this list will not be included, even if they exist
+  between the starting and ending questions, or were specified in the 'Included
+  Questions' parameter).
+
+This handler will format the results in an HTML table for which you can control all
+the styling, but the basic format is as follows:
+  Answers:
+  QUESTION_LABEL: ANSWER
+  ...
+  QUESTION_LABEL: ANSWER
+  
+There are also options to include the name of the template at the top of the table 
+and a review request link below the table.
+
+=== Parameters
+[Starting Question]
+  The question name ("Question" in the authoring console) of the first question that should be formatted.  If this is
+  left blank, the first question on the service item will be used.
+[Ending Question]
+  The question name ("Question" in the authoring console) of the last question that should be formatted.  If this is
+  left blank, the last question on the service item will be used.
+[Included Questions]
+  A comma separated list of question question names ("Question" in the authoring console) that should be explicitely
+  included in the question list.  Questions included in this list will be 
+  included even if they do not exist between the starting and ending questions.
+  Whitespace matters; ensure there are no spaces after a comma separating the
+  question names(unless the question name includes a preceding space).
+[Excluded Questions]
+  A comma separated list of question question names ("Question" in the authoring console) that should be explicitely
+  excluded in the question list.  Questions included in this list will be
+  excluded even if they exist between the starting and ending questions or are
+  included in the 'Included Question' parameter.  Whitespace matters; ensure
+  there are no spaces after a comma separating the question names (unless the
+  question question name includes a preceding space).
+[Survey/Request Instance ID] 
+  Instance ID of the survey/request to retrieve answers for
+[Include Review Link]
+  Yes/No: Whether or not a review link should be included below the table
+[Include Template Name]
+  Yes/No: Whether or not the name of the template should be included above the table as a header
+[Default Web Server]
+  Default Web Server
+[Heading table structure]
+  Header table structure
+[Question table tag open]
+  Opening table tag and styling, defaults to: <table>
+[Question table tbody tag open]
+  Opening table tag and styling, defaults to: <tbody>
+[Question table tr tag open]
+  Opening tr tag and styling, defaults to: <tr>
+[Question table label td tag open]
+  Opening question label td tag and styling, defaults to: <td>
+[Question table label td tag close]
+  Closing question label td tag, defaults to: </td>
+[Question table answer td tag open]
+  Opening question answer td tag and styling, defaults to: <td>
+[Question table answer td tag close]
+  Closing question answer td tag, defaults to: </td>
+[Question table tr tag close]
+  Closing tr tag, defaults to: </tr>
+[Question table tbody tag close]
+  Closing body tag, defaults to: </tbody>
+[Question table tag close]
+  Closing table tag, defaults to: </table>
+
+==== Sample Configuration
+*Simple Configuration*
+Starting Question::           
+Ending Question::             
+Included Questions::          
+Excluded Questions:: 
+Survey/Request Instance ID::  <%=@dataset['CustomerSurveyInstanceId']%>       
+Include Review Link:: No
+Include Template Name:: No
+Default Web Server:: http://mywebserver/kinetic
+Heading table structure:: 
+Question table tag open:: <table>
+Question table tbody tag open:: <tbody>
+Question table tr tag open:: <tr>
+Question table label td tag open:: <td>
+Question table label td tag close:: </td>
+Question table answer td tag open:: <td>
+Question table answer td tag close:: </td>
+Question table tr tag close:: </tr>
+Question table tbody tag close:: </tbody>
+Question table tag close:: </table>
+
+*Advanced Configuration*
+Starting Question::           Question 1
+Ending Question::             Question 6
+Included Questions::          Question 11,Question 12,Question 19
+Excluded Questions::          Question 2,Question 5
+Survey/Request Instance ID::  <%=@dataset['CustomerSurveyInstanceId']%>
+Include Review Link:: Yes
+Include Template Name:: Yes
+Default Web Server:: http://mywebserver/kinetic
+Heading table structure:: 
+Question table tag open:: <table border=1px>
+Question table tbody tag open:: <tbody>
+Question table tr tag open:: <tr>
+Question table label td tag open:: <td align="right" style="padding:5px">
+Question table label td tag close:: </td>
+Question table answer td tag open:: <td align="left" style="padding:5px">
+Question table answer td tag close:: </td>
+Question table tr tag close:: </tr>
+Question table tbody tag close:: </tbody>
+Question table tag close:: </table>
+
+=== Results
+[result]
+  The HTML table/string result of answers referenced by the starting/ending question and
+  included/excluded questions parameters.
+
+[textresult]
+  The same data as in the HTML result, but in a text only format. 
+  Answers:
+  Question Label: Answer
+  format.
+  
+ 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_assignment_record_update" name="Kinetic Assignment Record Update" schema_version="1.0" version="3">
+    <author>support@kineticdata.com</author>
+    <description>
+        Updates the Request Due Date, Work Order Due Date, and/or Priority field(S) on a 
+		specific record from the KS_RQT_Assignment form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="Work Order ID" label="Work Order ID" required="true"
+            tooltip="Enter the Work Order ID to find a record in KS_RQT_Assignment form"></parameter>	
+		<parameter id="Date Only" label="Request Due Date" required="false"
+            tooltip="Request Due Date"></parameter>
+		<parameter id="Fulfiller Date" label="Work Order Due Date" required="false"
+            tooltip="Work Order Due Date"></parameter>
+		<parameter id="Priority" label="Priority" required="false"
+            tooltip="Priority"></parameter>
+		<parameter id="Status" label="Status" required="false"
+            tooltip="Status"></parameter>
+    </parameters>
+    <handler name="kinetic_assignment_record_update" version="3">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+            <parameter name="Work Order ID">&lt;%= @parameters['Work Order ID'] %&gt;</parameter>
+        </parameters>
+		<fields>
+			<field name="Date Only">&lt;%= @parameters['Date Only'] %&gt;</field>
+			<field name="Fulfiller Date">&lt;%= @parameters['Fulfiller Date'] %&gt;</field>
+			<field name="Priority">&lt;%= @parameters['Priority'] %&gt;</field>
+			<field name="Status">&lt;%= @parameters['Status'] %&gt;</field>
+		</fields>
+    </handler>
+    <results format="xml">
+			<result name='instanceId'/>
+    </results>
+</taskDefinition>

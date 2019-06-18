@@ -1,0 +1,15 @@
+== Kinetic_Request_Answer_Update V4 (2015-12-18)
+* 5.2 version. Handles 5.2 unlimited answers.
+* Handle situation of same template name in multiple
+  catalogs
+
+== Kinetic_Request_Answer_Update V3  11/3/2014
+* Returns full answer instead of answer viewer
+
+== Kinetic_Request_Answer_Update V2  3/18/2012
+* Updated Parameters to take Question Name rather than Question Instance ID
+* Changed behavior for no match on Answer value to return nil rather than 
+  throw an error
+
+== Kinetic_Request_Answer_Update V1  2/24/2012
+* Initial Build

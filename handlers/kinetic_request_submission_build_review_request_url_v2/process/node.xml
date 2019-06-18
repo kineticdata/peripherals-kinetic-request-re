@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_build_review_request_url" name="Kinetic Request Submission Build Review Request Url" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Builds and returns the URL that corresponds to a review request view of the desired Kinetic Request submission.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_submission_build_review_request_url/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="submission_id" label="Submission Id:" required="true"
+            tooltip="The instance id of the Kinetic Request submission that will be displayed by the review request."/>
+        <parameter id="configuration_type" label="Configuration Type:" required="false"
+            menu="Simple,Advanced"
+            tooltip="When set to 'Simple', all review request parameters are defaulted.  When set to 'Advanced', optional review request parameters are exposed.">Simple</parameter>
+        <parameter id="review_page" label="Review Page:" required="false"
+            dependsOnId="configuration_type" dependsOnValue="Advanced"
+            tooltip="The path to the desired review request page (which should be set if the review request should use a specific theme).  If this value is blank, the default review request page will be used."/>
+        <parameter id="load_all_pages" label="Load All Pages:" required="false"
+            menu="true,false"
+            dependsOnId="configuration_type" dependsOnValue="Advanced"
+            tooltip="If true, all pages in the request are loaded at once. If false, the contents of the first page will be displayed, and the other content pages will be displayed as tabs."/>
+        <parameter id="exclude_by_name" label="Excluded Pages (Name):" required="false"
+            dependsOnId="configuration_type" dependsOnValue="Advanced"
+            tooltip="Comma separated list of page names to exclude from the review."/>
+        <parameter id="exclude_by_number" label="Excluded Pages (Number):" required="false"
+            dependsOnId="configuration_type" dependsOnValue="Advanced"
+            tooltip="Comma separated list of page numbers to exclude from the review (index starts at 1)."/>
+    </parameters>
+    <handler name="kinetic_request_submission_build_review_request_url" version="2">
+        <configuration>
+            <config name="application_path">&lt;%= @appconfig['Default Web Server'] %&gt;</config>
+            <config name="configuration_type">&lt;%= @parameters['configuration_type'] %&gt;</config>
+        </configuration>
+        <parameters>
+            <parameter name="csrv">&lt;%= @parameters['submission_id'] %&gt;</parameter>
+            <parameter name="exclude">&lt;%= @parameters['exclude_by_number'] %&gt;</parameter>
+            <parameter name="excludeByName">&lt;%= @parameters['exclude_by_name'] %&gt;</parameter>
+            <parameter name="loadAllPages">&lt;%= @parameters['load_all_pages'] %&gt;</parameter>
+            <parameter name="reviewPage">&lt;%= @parameters['review_page'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="URL"/>
+    </results>
+</taskDefinition>

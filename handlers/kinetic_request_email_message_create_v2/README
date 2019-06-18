@@ -1,0 +1,33 @@
+== KineticRequest_EmailMessage_Create_V1
+Creates a Kinetic message record (KS_MSG_Message) using the specified message 
+template.  When the Kinetic Request message poller processes the record, it 
+generates an email message from the template and sends it to the target 
+recipient.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[To]
+  The email address of the target recipient.
+[Message Template Name]
+  The name of the message template that will be used to generate the email
+  message.
+[Originating Id]
+  The instance id of an originating Kinetic Request submission.  This value is
+  used to populate dynamic values specified in the message template
+  (defaults to "<%=@base['CustomerSurveyInstanceId']%>").
+
+==== Sample Configuration
+To::                     <%=@base['Contact_Info_Value']%>
+Message Template Name::  Request Denied
+Originating Id::         <%=@base['CustomerSurveyInstanceId']%>
+
+=== Results
+[Instance Id]
+  The Remedy Instance Id of the generated message record.
+
+=== Detailed Description
+The message record, stored in the KS_MSG_Message form, is created to interact
+with the Kinetic Request messaging process. See the 'Message Templates' section
+of the Kinetic Request User and Management Guide for more information about the
+Kinetic Request messaging process.

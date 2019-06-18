@@ -1,0 +1,48 @@
+== Kinetic Request All Answers Retrieve
+Retrieves Submission Answers
+
+=== Parameters
+[Submission Instance ID]
+The Instance ID of the Request from which the Answers are retrieved.
+
+==== Sample Configuration
+
+Submission Instance ID 	- <%=@inputs['OriginatingID']%>
+
+
+=== Results
+Retrieves a specific submission's answers. This is useful for inside subtrees/routines 
+because it allows you, after this handler is run, to have the equivalent of the @answers 
+references available. 
+
+
+This handler will format the results as such:
+<results>
+      <result name="Notes">asdf</result>
+      <result name="Submitter First Name">Allen</result>
+      <result name="Submitter Last Name">Allbrook</result>
+      <result name="Submitter People Number">PPL000000000013</result>
+      <result name="Submitter Email Address">nobody@kineticdata.com</result>
+      <result name="Submitter Network Id">Allen</result>
+      <result name="Submitter Remedy Id">Allen</result>
+      <result name="Requested For Cost Center">225276-B</result>
+      <result name="Requested For Department">Customer Service</result>
+      <result name="Requested For Email">nobody@kineticdata.com</result>
+      <result name="Requested For Employee Type">Office-Based Employee</result>
+      <result name="Requested For First Name">Allen</result>
+      <result name="Requested For Last Name">Allbrook</result>
+      <result name="Requested For Manager Remedy Id">Allen</result>
+      <result name="Requested For Network Id">Allen</result>
+      <result name="Requested For Office Location">United States</result>
+      <result name="Requested For Region">Americas</result>
+      <result name="Requested For Remedy Id">Allen</result>
+      <result name="Requested For Site">Headquarters, Building 1.31</result>
+      <result name="Requested For Work Phone Number">1 212 555-5454 (11)</result>
+      <result name="Validation Status">Draft - Incomplete</result>
+      <result name="Request Status">Open</result>
+      <result name="Save For Later Sw">No</result>
+      <result name="Validation Test">1234</result>
+      <result name="area code">asd</result>
+</results>
+
+=== Detailed Description

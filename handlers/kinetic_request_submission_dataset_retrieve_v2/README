@@ -1,0 +1,17 @@
+== kinetic_request_submission_dataset_retrieve
+Returns the dataset of the submission provided (in XML)
+
+
+=== Parameters
+[Submission ID]
+
+
+==== Results
+
+The contents of the dataset for the provided submission. This 
+may vary based on the submission.
+
+Returns an XML string of the dataset name and value pairs. 
+This is useful for inside subtrees/routines because it allows you, 
+after this handler is run, to have the equivalent of the 
+@dataset references available

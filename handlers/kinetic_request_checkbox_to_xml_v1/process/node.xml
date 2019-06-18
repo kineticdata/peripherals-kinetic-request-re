@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_checkbox_to_xml" name="Kinetic Request Checkbox To XML" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>This handler converts a Kinetic Request checkbox answer into an XML string.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_checkbox_to_xml/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="input" label="Checkbox Answer" required="true"
+          tooltip="The checkbox answer to be converted to XML"/>
+    </parameters>
+    <handler name="kinetic_request_checkbox_to_xml" version="1">
+        <parameters>
+            <parameter name="input">&lt;%= @parameters['input'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="XML"/>
+    </results>
+</taskDefinition>

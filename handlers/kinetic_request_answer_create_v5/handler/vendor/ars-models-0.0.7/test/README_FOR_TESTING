@@ -1,0 +1,101 @@
+== Testing Preparation
+ArsModels uses a collection of forms and filters to run tests against.  Each of
+these Ars server objects are prefixed with 'ARSMODELS_'.  In order to run the
+tests, these object need to be imported to the target servers.  There are two
+different definition files: test/config/arsmodels_test_suite-6.3.def and
+test/config/arsmodels_test_suite-7.0.def.  Ars servers running 6.3 should load
+the 6.3 definitions and all other version should load the 7.0 definitions.
+
+Additionally, to test currency fields, you will need to import two data files
+from the config directory: arsmodels_test_data-ArSystemCurrencyCodes.arx and
+arsmodels_test_data-ArSystemCurrencyRatios.arx.  These contain base testing data
+and assume that the ARS server does not have an XTS currency configured (XTS is
+a currency code reserved for testing purposes) but does have USD configured as 
+the primary and a functional type. All currency related tests occur in the
+CurrencyFieldTest suite located in the
+canonical/field_types/currency_field_test.rb file.
+
+== Testing Configuration
+There is currently only a single configuration file for the ArsModels test
+suite.  This file, context.yml, is located in the test/config directory with the
+Ars server definition files.  It contains a :admin_user YAML object that is used
+by default for all test cases and a :servers YAML array that is used when
+testing against multiple Ars servers.
+
+== How to Execute the Tests
+Run all test suites against the default server
+jruby -S rake test
+
+=== Testing Parameters
+These parameters can be used in combination wtih
+
+==== Specify testing context
+jruby -S rake test CONTEXT=
+
+==== Run a single suite or all suites matching a pattern
+Note that SUITE should not be used with TEST.
+
+jruby -S rake test SUITE=CheckBoxFieldTest
+jruby -S rake test SUITE=*FieldTest
+
+==== Run a single file or all files matching a pattern
+Note that TEST should not be used with SUITE.
+
+jruby -S rake test TEST=test/ruby-wrapper/canonical/field_types/check_box_field_test.rb
+jruby -S rake test TEST=test/ruby-wrapper/canonical/field_types/*_field_test.rb
+
+==== Run a group of tests
+jruby -S rake test GROUP=
+
+==== Run a single test or all methods matching a pattern
+jruby -S rake test METHOD=
+
+==== Specify an Arapi Version
+jruby -S Rake test ARAPI_VERSION=
+
+== Test Structure
+There are three main branches of testing: canonical tests, crud tests, and unit
+tests.
+
+The canonical tests are Ars-centric tests that leverage the ARSMODELS_Canonical
+form to verify complete Ars compatibility.  These tests verify the correct basic
+Ars behavior of ArsModels and Ars Server interations (such as being able to read
+and write to each field type, handle different entry modes, etc.)
+
+The CRUD (create, retrieve, update, delete) tests are ArsModels-centric tests
+that test the common interactions between ArsModels and the Ars server.  These
+tests verify the correct ArsModels specific behavior of these interactions (such
+as sort order, field caching, etc).
+
+The unit tests are intended to test specific functionality of ArsModels objects
+that is much more granular than the crud tests.  Many of the unit tests cover
+private or helper methods that help to build up the CRUD type functionality.
+Where most of the CRUD tests are written as end-to-end use cases, the unit tests
+are intended to verify that the functionality the CRUD cases encapsulate are
+functioning independently.
+
+=== What is the difference between canonical and crud/unit tests?
+The big difference between the canonical tests and the canonical and crud/unit
+tests lies in the functionality being tested.  Functionality that is a part of
+Remedy is tested in the canonical tests.  Functionality that is added as part of
+the ArsModels package is tested in the crud/unit tests.
+
+== Writing Tests
+=== How to use FIXTURES
+The test/test_helper.rb file implements a simple YAML loader for test data.
+This loader simulates automatic loading similar to Rails fixtures.  All '*.yml'
+files located in the test/config directory will be loaded and stored in the
+FIXTURES contant.  Fixtures can be accessed via the FIXTURES constant using the
+symbolized name of the file.
+
+For example:
+  Contents of context.yml:
+    :admin_user:
+      :adapter: 'japi'
+      :server: '209.98.36.43'
+      :timezone: '-05:00'
+      :username: 'Demo'
+
+  Within any of the tests FIXTURES[:context][:admin_user:] would return
+  {:adapter => 'japi', :server => '209.98.36.43', :timezone => '-05:00',
+  :username => 'Demo'}

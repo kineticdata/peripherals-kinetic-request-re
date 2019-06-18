@@ -1,0 +1,5 @@
+<results format="xml">
+	<result name="Status" type="regexp">.*</result>
+	<result name="Error Code" type="regexp">.*</result>
+	<result name="Result Message" type="regexp">.*</result>
+</results>

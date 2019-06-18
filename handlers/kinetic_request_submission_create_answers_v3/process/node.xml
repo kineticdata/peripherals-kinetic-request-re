@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_create_answers" name="Kinetic Request Submission Create Answers" schema_version="1.0" version="3">
+    <author>support@kineticdata.com</author>
+    <description>This handler creates answer records related to the specified submission given one or multiple JSON answer sets.</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="submission_instance_id" label="Submission Instance Id" required="true" tooltip="The instance id of the submission for which to create answers"/>
+        <parameter id="answer_sets" label="Answer Sets" required="true" tooltip="Comma-separated JSON answer sets that contain the question label to answer mappings"/>
+    </parameters>
+    <handler name="kinetic_request_submission_create_answers" version="3">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+			<info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='submission_instance_id'>&lt;%= @parameters['submission_instance_id'] %&gt;</parameter>
+            <parameter name='answer_sets'>&lt;%= @parameters['answer_sets'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>

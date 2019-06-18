@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_get_answer_set" name="Kinetic Request Submission Get Answer Set" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>This handler builds a JSON answer set for the current submission.  The JSON structure maps question labels to their corresponding answers.</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="mode" label="Mode" required="true" menu="All,Some" 
+            tooltip="If 'All' the entire set of questions will be used.  If 'Some' the questions listed in the 'Included Questions' parameter will be used.  In both cases, questions listed in the 'Excluded Questions' parameter will never be included in the generated output."/>
+        <parameter id="included_questions" label="Included Questions" required="false" 
+            dependsOnId="mode" dependsOnValue="Some" 
+            tooltip="A comma separated list of question menu labels that should be explicitly included in the question list.  This is only needed if the 'Mode' parameter is set to 'Some'.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+        <parameter id="excluded_questions" label="Excluded Questions" required="false" 
+            tooltip="A comma separated list of question menu labels that should be explicitly excluded from the question list.  Questions included in this list will be excluded even if they are included in the 'Included Questions' parameter.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+        <parameter id="question_aliases" label="Question Aliases" required="false"
+            tooltip="A specially formatted mapping of question labels in the answer hash to labels to be used in the answer set.  This is necessary when an answer should be forwarded, but the question's label varies from form to form.  The alias format is as follows:  OldQuestionLabel=NewQuestionLabel,RequesterFirstName=FirstName."/>
+    </parameters>
+    <handler name="kinetic_request_submission_get_answer_set" version="1">
+        <parameters>
+            <parameter name="mode">&lt;%= @parameters['mode'] %&gt;</parameter>
+            <parameter name="included_questions">&lt;%= @parameters['included_questions'] %&gt;</parameter>
+            <parameter name="excluded_questions">&lt;%= @parameters['excluded_questions'] %&gt;</parameter>
+            <parameter name="question_aliases">&lt;%= @parameters['question_aliases'] %&gt;</parameter>
+        </parameters>
+        <answers>&lt;% @answers.each do |name, value| %&gt;
+            <answer name="&lt;%= name %&gt;">&lt;%= value %&gt;</answer>&lt;% end %&gt;
+        </answers>
+    </handler>
+    <results format="xml">
+        <result name="Answer Set"/>
+    </results>
+</taskDefinition>

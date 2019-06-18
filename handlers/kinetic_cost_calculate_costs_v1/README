@@ -1,0 +1,38 @@
+== kinetic_helper_record_find_all
+Returns an XML listing record ids found in the KS_SRV_Helper form.
+
+
+=== Parameters
+[SurveyInstanceID]
+[CustomerSurveyInstanceID]
+[Status]
+[Character Field1]
+[Character Field2]
+[Character Field2]
+[Character Field3]
+[Character Field4]
+[Character Field5]
+[Character Field6]
+[Character Field7]
+[Character Field8]
+[Character Field9]
+[Character Field10]
+[Character Field11]
+[Character Field12]
+[Integer Field1]
+[Integer Field2]
+[Integer Field2]
+[Integer Field3]
+[Integer Field4]
+[Integer Field5]
+[Integer Field6]
+
+==== Results
+
+Record IDs of the records found
+
+ex.
+<Request_Ids>
+   <RequestId>000000000000053</RequestId>
+   <RequestId>000000000000061</RequestId>
+</Request_Ids>

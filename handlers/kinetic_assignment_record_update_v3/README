@@ -1,0 +1,15 @@
+== kinetic_assignment_record_update
+Updates the Date Only (ie Due Date on Fulfillment Console), Work Order
+Due Date, and/or Priority of a specific record from the KS_SRV_Helper form.
+
+
+=== Parameters
+[Work Order ID]
+[Request Due Date]
+[Work Order Due Date]
+[Priority]
+[Status]
+
+==== Results
+ 
+[instanceId]

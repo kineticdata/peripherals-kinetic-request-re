@@ -1,0 +1,82 @@
+== KineticRequest_Approval_Create
+Creates an approval submission for the submission record specified by the
+'Lookup Id' parameter, typically the Instance Id of the originating base
+request.
+
+This will trigger the Kinetic Request approval process, sending out an email
+formatted based on the specified 'Message Template Name' parameter to the
+approver.  This email typically includes a direct link to the approval, which
+can be followed to display the Approval Template specified by the 'Approval
+Template Name' parameter.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Approver Login]
+  The Remedy login name of the approver.
+[Approver Email]
+  The email address of the approver.
+[Approver First Name]
+  The first name of the approver.
+[Approver Last Name]
+  The last name of the approver.
+[Message Template Name]
+  The name of the message template to use for the approval.
+[Approval Template Catalog Name]
+  The name of the catalog the template for approval belongs to.
+[Approval Template Name]
+  The name of the template to use for the approval.
+[Lookup Id]
+  The instance id of the Kinetic Request submission that is being approved 
+  (defaults to "<%=@base['CustomerSurveyInstanceId']%>").
+
+==== Sample Configuration
+Approver Login::                 <%=@results['Find Approver']['Login']%>
+Approver Email::                 <%=@results['Find Approver']['Email']%>
+Approver First Name::            <%=@results['Find Approver']['First Name']%>
+Approver Last Name::             <%=@results['Find Approver']['Last Name']%>
+Message Template Name::          Approver Notification
+Approval Template Catalog Name:: Acme IT Catalog
+Approval Template Name::         Simple Approval Template
+Lookup Id::                      <%=@base['CustomerSurveyInstanceId']%>
+
+=== Results
+[Instance Id]
+  The Remedy Instance Id of the generated approval submission.  This value is 
+  available immediately upon creation of this node.
+[Validation Status]
+  The validation status of the completed approval submission.  This value is not
+  available until the deferring process completes this node.
+
+=== Detailed Description
+The approval submission record, stored in the KS_SRV_CustomerSurvey_base form,
+is created to interact with the Kinetic Request approval process (see the
+Request Manager Training Manual for more information on Kinetic Request 
+approvals).  This handler retrieves the submission record that has an 'Instance
+Id' that matches the 'Lookup Id' parameter and copies the data necessary to
+execute the Kinetic Request approval process.
+* Copies the 'Lookup Id' parameter into the 'Lookup Value Id' field.
+* Copies all of the attribute field values.
+* Copies various required core fields (including 'ApplicationName',
+  'AssigneeGroup', 'Category', 'CategoryInstanceID', 'Company ID',
+  'Company Name', 'Data_Set', 'Form', and 'Survey_Method').
+* Copies the OriginatingID and OriginatingID_Display fields from the originating
+  submission record.
+* Sets the 'Originating Form' field to the value of the Suvey_Template_Name on
+  the originating submission record.
+* Sets the 'Submission Type' field to "Approval".
+* Sets the 'ng_EndpointSecret' field to the deferral token of this task.
+* Sets the MessageTemplateInstanceID to the Instance Id of the message template
+  (KS_MSG_MessageTemplate records, configurable from the Service Catalog
+  Console) that was specified by the 'Message Template Name' parameter.
+* Sets the SurveyInstanceID field the the Instance Id of the service item that
+  was specified by the 'Approval Template' parameter.
+* Maps the following approval field values from the specified info values:
+  - 'ValidationStatus'     => "Initial Validation Status"
+* Maps the following approval field values from the specified parameters:
+  - 'Contact Info Value'   => "Approver Email"
+  - 'First Name'           => "Approver First Name"
+  - 'Last Name'            => "Approver Last Name"
+  - 'Submitter'            => "Approver Login"
+  - 'Survey Template Name' => "Approval Template Name"
+  - 'NotesForCustomer'     => "Notes for Customer"

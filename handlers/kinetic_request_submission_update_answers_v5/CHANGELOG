@@ -1,0 +1,15 @@
+(2017-06-21)
+* Update dependencies.rb to only load JSON in Task 3 and below to make it
+  compatible with Task 4 and above
+
+Kinetic Request Submission Update Answers V5 (2015-12-18)
+* 5.2 version. Handles 5.2 unlimited answers.
+
+Kinetic Request Submission Update Answers V4 (2013-11-18)
+*will work properly across sessions (& parent/child items)
+
+Kinetic Request Submission Update Answers V3 (2013-07-11)
+*handles mapping to attributes on the base form
+
+Kinetic Request Submission Update Answers V2 (2012-10-29)
+*handles if answers are more than 255 characters

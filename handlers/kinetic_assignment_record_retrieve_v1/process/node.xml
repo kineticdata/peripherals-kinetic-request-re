@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_assignment_record_retrieve" name="Kinetic Assignment Record Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Retrieves a specific record from the KS_RQT_Assignment form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="Work Order ID" label="Work Order ID" required="true"
+            tooltip="Enter the Work Order ID to find a record in KS_RQT_Assignment form"></parameter>	
+    </parameters>
+    <handler name="kinetic_assignment_record_retrieve" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+            <parameter name="Work Order ID">&lt;%= @parameters['Work Order ID'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+			<result name='DueDate'/>
+			<result name='AssignedIndividualID'/>
+			<result name='Company'/>
+			<result name='AssignedGroupID'/>
+			<result name='Organization'/>
+			<result name='AssignedGroupName'/>
+			<result name='SourceID'/>
+			<result name='SourceGUID'/>
+			<result name='SystemSourceName'/>
+			<result name='Name'/>
+			<result name='instanceId'/>
+			<result name='SLA Goal Hours'/>
+			<result name='SLA Goal Calculated Seconds'/>
+			<result name='AssignedIndividualFirstName'/>
+			<result name='AssignedIndividualLastName'/>
+			
+    </results>
+</taskDefinition>

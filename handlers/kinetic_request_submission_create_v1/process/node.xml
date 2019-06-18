@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_create" name="Kinetic Request Submission Create" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Creates a new base submission using the information specified.
+    </description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>true</deferrable>
+    <parameters>
+		<parameter id="login" label="Submitter of new request:" required="true"
+          tooltip="The login id to open the new submission for." />
+        <parameter id="email" label="Email:" required="false"
+          tooltip="The email address of the person this opened for (if they will be receiving an email about it)." />
+        <parameter id="first_name" label="First Name:" required="true"
+          tooltip="The first name of the person this should be logged under." />
+        <parameter id="last_name" label="Last Name:" required="true"
+          tooltip="The last name of the peson this should be logged under." />
+        <parameter id="message_template_name" label="Message Template Name:" required="false"
+          tooltip="The name of the message template to use for notification." />
+        <parameter id="template_catalog_name" label="Template Catalog Name:" required="true"
+          tooltip="The name of the catalog the request template belongs to."></parameter>
+        <parameter id="template_name" label="Request Template Name:" required="true"
+          tooltip="The name of the template to use for the new request." />
+        <parameter id="originating_form" label="Originating Form:" required="false"
+          tooltip="If used, usually holds the template name of the originating submission."></parameter>
+		<parameter id="originating_id" label="Originating Id:" required="false"
+          tooltip="The instance id to store in the Originating ID field."></parameter>
+        <parameter id="originating_id_display" label="Originating Id-Display:" required="false"
+          tooltip="The field storing the Originating ID's KSR number."></parameter>
+		<parameter id="lookup_id" label="Lookup Id:" required="false"
+          tooltip="The instance id to store for lookup purposes, sometimes useful in nested parent-child relationships."></parameter>
+        <parameter id="notes_for_customer" label="Notes For Customer:" required="false"
+          tooltip="Text that can be displayed to customer (typically from the Service Catalog page).  This is stored on the 'Customer Notes' field on the KS_SRV_CustomerSurvey_base form." />
+		<parameter id="initial_validation_status" label="Initial Validation Status:" required="false"
+          tooltip="Initial Validation status to include, if any." />
+		<parameter id="submit_type" label="Submission Type" required="false"
+          tooltip="Should be Child if this is used for creating a Child request or left blank if a normal service request." />
+    </parameters>
+    <handler name="kinetic_request_submission_create" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='lookup_id'>&lt;%= @parameters['lookup_id'] %&gt;</parameter>
+            <parameter name='message_template_name'>&lt;%= @parameters['message_template_name'] %&gt;</parameter>
+            <parameter name='template_catalog_name'>&lt;%= @parameters['template_catalog_name'] %&gt;</parameter>
+            <parameter name='template_name'>&lt;%= @parameters['template_name'] %&gt;</parameter>
+        </parameters>
+        <fields>
+            <!-- 
+            Also included are, which are calculated in the handler.
+              * MessageTemplateInstanceID (calculated from 'message_template_name')
+              * SurveyInstanceID          (calculated from 'template_catalog_name' and 'template_name')
+            and
+            -->
+            <field name='ValidationStatus'>&lt;%= @parameters['initial_validation_status'] %&gt;</field>
+            <field name='Contact_Info_Value'>&lt;%= @parameters['email'] %&gt;</field>
+            <field name='First Name'>&lt;%= @parameters['first_name'] %&gt;</field>
+            <field name='Last Name'>&lt;%= @parameters['last_name'] %&gt;</field>
+            <field name='Submitter'>&lt;%= @parameters['login'] %&gt;</field>
+            <field name='Survey_Template_Name'>&lt;%= @parameters['template_name'] %&gt;</field>
+            <field name='NotesForCustomer'>&lt;%= @parameters['notes_for_customer'] %&gt;</field>
+            <field name='Source'>KS_SRV_CustomerSurvey_base</field>
+			<field name='Form'>&lt;%= @parameters['originating_form'] %&gt;</field>
+			<field name='OriginatingID'>&lt;%= @parameters['originating_id'] %&gt;</field>
+			<field name='OriginatingID_Display'>&lt;%= @parameters['originating_id_display'] %&gt;</field>
+			<field name='Submit Type'>&lt;%= @parameters['submit_type'] %&gt;</field>
+			<field name='ng_EndpointSecret'>&lt;%= @task['Deferral Token'] %&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml">
+        <result name="Instance Id"/>
+		<result name="KSR"/>
+    </results>
+</taskDefinition>

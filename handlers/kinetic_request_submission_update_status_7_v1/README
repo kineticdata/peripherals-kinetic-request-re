@@ -1,0 +1,18 @@
+== KineticRequest_Submission_UpdateStatus_7_V1
+Updates the Status (field 7), the status that is used to process/indicate status of
+the specified Kinetic Request submission record.
+
+The Status is string/selection value that represents the status value
+that is used to process/indicate status of the request (such as "Sent" or "Complete").
+Changing this status can/will trigger workflow/record processing.
+
+=== Parameters
+[Status]
+  The value the Status field on the specified Kinetic Request
+  submission record will be set to (this must be a valid value).
+[Submission Id]
+  The instance id of the Kinetic Request submission to be updated.
+
+==== Sample Configuration
+Status::           Sent
+Submission Id::               <%=@base['CustomerSurveyInstanceId']%>

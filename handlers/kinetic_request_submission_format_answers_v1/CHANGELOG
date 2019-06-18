@@ -1,0 +1,3 @@
+KineticRequest_Submission_FormatAnswers_V1 (2011-04-20)
+* Initial version.  See README for details.
+* Removed the template_type and custom_template parameters.

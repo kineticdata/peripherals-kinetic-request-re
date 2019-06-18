@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_email_message_create" name="Kinetic Request Email Message Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>
+        Creates a Kinetic message record using the specified message template.
+        Once the Kinetic Request message poller process the record, an email message
+        is generated and sent to the target recipient.
+    </description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_email_message_create/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="to" label="To:" required="true"
+            tooltip="The email address of the target recipient." />
+        <parameter id="message_template_name" label="Message Template Name:" required="true"
+            tooltip="The name of the message template that will be used to generate the email message." />
+        <parameter id="originating_id" label="Originating Id:" required="true"
+            tooltip="The instance id of an originating Kinetic Request submission.">&lt;%=@base['CustomerSurveyInstanceId']%&gt;</parameter>
+    </parameters>
+    <handler name="kinetic_request_email_message_create" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='message_template_name'>&lt;%= @parameters['message_template_name'] %&gt;</parameter>
+            <parameter name='application_name'>Kinetic Request</parameter>
+        </parameters>
+        <fields>
+            <!-- KS_MSG_MessageTemplate -->
+            <field name='To'>&lt;%= @parameters['to'] %&gt;</field>
+            <field name='OriginatingID'>&lt;%= @parameters['originating_id'] %&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml">
+        <result name="Instance Id"/>
+    </results>
+</taskDefinition>

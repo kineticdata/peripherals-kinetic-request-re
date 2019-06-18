@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_service_item_update_status" name="Kinetic Request Service Item Update Status" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        This handler updates the status of a given service item.
+    </description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_service_item_update_status/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="catalog_name" label="Catalog Name" required="true"
+            tooltip="The catalog name of the service item this handler will update" />
+        <parameter id="service_item_name" label="Service Item Name" required="true"
+            tooltip="The current name of the service item this handler will update" />
+        <parameter id="new_status" label="New Status" required="true"
+            tooltip="The status to update the service item with" />
+    </parameters>
+    <handler name="kinetic_request_service_item_update_status" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="catalog_name">&lt;%= @parameters['catalog_name'] %&gt;</parameter>
+            <parameter name="service_item_name">&lt;%= @parameters['service_item_name'] %&gt;</parameter>
+            <parameter name="new_status">&lt;%= @parameters['new_status'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

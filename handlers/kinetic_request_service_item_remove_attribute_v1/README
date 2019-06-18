@@ -1,0 +1,18 @@
+== KineticRequest_ServiceItem_RemoveAttribute
+  This handler removes a specific attribute that is defined for the given
+  service item.  If multiple instances of the same attribute are defined for the
+  same service item, they are all removed.
+
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will remove an attribute
+  from
+[Service Item Name]
+  The name of the service item this handler will remove an attribute from
+[Attribute Name]
+  The name of the attribute that this handler will remove
+
+==== Sample Configuration
+Catalog Name::          KURL Catalog
+Service Item Name::     Test Service Item
+Attribute Name::        Category

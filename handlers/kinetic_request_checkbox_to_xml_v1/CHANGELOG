@@ -1,0 +1,4 @@
+KineticRequest_CheckboxToXml_V1 (2011-04-20)
+* Initial version.  See README for details.
+* Modified to split on a comma and one trailing white-space character.
+* Modified to output XML with <list> and <item> elements.

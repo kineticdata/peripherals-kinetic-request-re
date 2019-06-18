@@ -1,0 +1,8 @@
+kinetic_helper_record_find_all_V3 (2013-11-04)
+* Added Other Character and Integer fields to search criteria
+
+kinetic_helper_record_find_all_V2 (2013-03-15)
+* Added Status to search criteria
+
+kinetic_helper_record_find_all_V1 (2012-10-10)
+* Initial version.  See README for details.

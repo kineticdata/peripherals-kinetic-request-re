@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_cost_calculate_costs" name="Kinetic Cost Calculate Costs" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Returns an XML listing record ids found in the KS_SRV_Helper form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="CostCategory" label="Cost Category" required="false"
+            tooltip="The Cost Category Label used to identify the set of cost values."></parameter>
+    </parameters>
+    <handler name="kinetic_cost_calculate_costs" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+			<parameter name='CostCategory'>&lt;%=@parameters['CostCategory']%&gt;</parameter>
+        </parameters>
+		<answers>&lt;% @answers.each do |name, value| %&gt;
+            <answer name="&lt;%= name %&gt;">&lt;%= value %&gt;</answer>&lt;% end %&gt;
+        </answers>
+    </handler>
+    <results format="xml">
+	        <result name="Total"/>
+    </results>
+</taskDefinition>

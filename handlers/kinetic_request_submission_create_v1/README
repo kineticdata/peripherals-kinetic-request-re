@@ -1,0 +1,88 @@
+== FRB Kinetic Request Submission Create
+Creates a submission 
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Submitter of new request]
+	The login id to open the new submission for.
+[Email]
+	The email address of the person this opened for (if they will be receiving an email about it).
+[First Name]
+	The first name of the person this should be logged under.
+[Last Name]
+	The last name of the peson this should be logged under.
+[Message Template Name]
+	The name of the message template to use for notification.
+[Template Catalog Name]
+	The name of the catalog the request template belongs to.
+[Request Template Name]
+	The name of the template to use for the new request.
+[Originating Form]
+	If used, usually holds the template name of the originating submission.
+[Originating Id]
+	The instance id to store in the Originating ID field.
+[Originating Id-Display]
+	The field storing the Originating ID's KSR number.
+[Lookup Id]
+	The instance id to store for lookup purposes, sometimes useful in nested parent-child relationships.
+[Notes For Customer]
+	Text that can be displayed to customer (typically from the Service Catalog page).  This is stored on the 
+	'Customer Notes' field on the KS_SRV_CustomerSurvey_base form.
+[Initial Validation Status]
+	Initial Validation status to include, if any.
+[Submission Type]
+	Should be Child if this is used for creating a Child request or left blank if a normal service request.
+
+==== Sample Configuration
+Sample 1:
+Submitter of new request::		sampleId
+Email::							sample@myDomain.com
+First Name::					Sample
+Last Name::						User
+Message Template Name::			Request Invite
+Template Catalog Name::			My Catalog
+Request Template Name::			This Request
+Originating Form::
+Originating Id::
+Originating Id-Display::
+Lookup Id::						
+Notes For Customer::
+Initial Validation Status::		Awaiting Customer
+Submission Type::
+
+
+Sample 2:
+Submitter of new request::		sampleId
+Email::							sample@myDomain.com
+First Name::					Sample
+Last Name::						User
+Message Template Name::			
+Template Catalog Name::			My Catalog
+Request Template Name::			HW Request
+Originating Form::				New Hire Provisioning
+Originating Id::				AGGAA5V0FUPHRANP0CMA86BCZLTR5X
+Originating Id-Display::		KSR000000000123
+Lookup Id::						
+Notes For Customer::
+Initial Validation Status::		Awaiting New Hire Details
+Submission Type::				Child
+
+=== Results
+
+[Instance Id]
+	Instance Id of the submission created
+[KSR]
+	KSR of the submission created
+	
+=== Detailed Description
+	Creates a submission using the information provided, sending a message using the
+	message template to the submitter if one is provided.
+	
+	This should be (usually) used in conjunction with an answer create handler or
+	an attribute set answer. This handler just creates a submission. It sets no 
+	Attributes1-60 nor does it create any answers at all for that submission. At the
+	time the v1 of this handler was created, it is recommended that this be used 
+	with the Kinetic Request Submission Update Answers (v4) handler because this
+	handler both creates answers and creates/updates the mappings for those answers
+	to the correct attributes. 

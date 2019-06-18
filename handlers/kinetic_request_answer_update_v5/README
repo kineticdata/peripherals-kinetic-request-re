@@ -1,0 +1,37 @@
+== Kinetic_Request_Answer_Update_V3
+Kinetic Request Answer Update updates an Answer value for an existing Request. If the Answer
+is mapped to an Attribute, this handler will automatically update the Request's Attribute or 
+other mapped Field as well.
+
+If no Answer is found, the handler will create the answer.
+
+=== Parameters
+[Submission Instance ID]
+The Instance ID of the Request to update.
+
+[Template Name]
+The Name of the Request Template used by the Submission being updated. This value is used
+to find the correct Question in KS_SRV_SurveyQuestion so that the Question Name can be
+used as a parameter rather than the Question Instance ID.
+
+[Question Name]
+The Name value for the Question in KS_SRV_SurveyQuestion. This value is used in conjunction
+with the Template Name parameter to find the correct Question.
+
+[Question Value]
+The new Value for the Question. 
+
+
+==== Sample Configuration
+
+Submission Instance ID 	- <%=@dataset['OriginatingID']%>
+Template Name		- New Hire Onboarding
+Question Name		- Alternate Email
+Question Value		= newbie@mycompany.com
+
+
+=== Results
+[Value]
+Returns the post-update Answer Viewer Value from the updated Question.
+
+=== Detailed Description

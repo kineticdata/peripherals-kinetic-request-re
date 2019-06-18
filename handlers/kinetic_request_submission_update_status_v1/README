@@ -1,0 +1,18 @@
+== KineticRequest_Submission_UpdateStatus_V1
+Updates the Validation Status, the status that is displayed to the end user, of
+the specified Kinetic Request submission record.
+
+The Validation Status is an arbitrary string that represents the status value
+that is displayed to the end user (such as "In Progress" or "Awaiting Approval")
+that is typically displayed within the launcher page of a Service Catalog.
+
+=== Parameters
+[Validation Status]
+  The value the Validation Status field on the specified Kinetic Request
+  submission record will be set to.
+[Submission Id]
+  The instance id of the Kinetic Request submission to be updated.
+
+==== Sample Configuration
+Validation Status::           Awaiting Approval
+Submission Id::               <%=@base['CustomerSurveyInstanceId']%>

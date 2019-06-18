@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_service_item_remove_attribute" name="Kinetic Request Service Item Remove Attribute" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        This handler removes a specific attribute that is defined for the given service item.  If multiple instances of the same attribute are defined for the same service item, they are all removed.
+    </description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_service_item_remove_attribute/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="catalog_name" label="Catalog Name" required="true"
+            tooltip="The catalog name of the service item this handler will remove an attribute from" />
+        <parameter id="service_item_name" label="Service Item Name" required="true"
+            tooltip="The name of the service item this handler will remove an attribute from" />
+        <parameter id="attribute_name" label="Attribute Name" required="true"
+            tooltip="The name of the attribute that this handler will remove" />
+    </parameters>
+    <handler name="kinetic_request_service_item_remove_attribute" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="catalog_name">&lt;%= @parameters['catalog_name'] %&gt;</parameter>
+            <parameter name="service_item_name">&lt;%= @parameters['service_item_name'] %&gt;</parameter>
+            <parameter name="attribute_name">&lt;%= @parameters['attribute_name'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

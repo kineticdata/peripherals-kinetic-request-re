@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Mon Jul 27 15:13:09 -0500 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>MISC</h2>
+<h3>More information</h3>
+<p>
+Roadmap available at <a
+href="http://redmine.kineticdata.com/projects/roadmap/ars-ng-arsmodels">redmine.kineticdata.com/projects/roadmap/ars-ng-arsmodels</a>
+</p>
+<h2>Ars Models</h2>
+<p>
+The Ars Models Ruby package is a JRuby wrapper implementations of the
+Kinetic Ars Models Java source classes, which simplify Ars interactions by
+exposing abstracted CRUD methods for common Ars objects. The Ruby models
+wrap Java calls to implement common Ruby paradigms, such as a method
+accepting a hash of options, and to convert the results from Java to Ruby
+datatypes.
+</p>
+<h2>Installing Ars Models</h2>
+<h3>Requirements</h3>
+<ul>
+<li>Java 1.5+
+
+</li>
+<li>JRuby version 1.1.4+
+
+</li>
+<li>Ars 7.0.1 system libraries
+
+</li>
+</ul>
+<h3>Installation</h3>
+<p>
+The Ars Models Ruby package is deployed using SVN.
+</p>
+<p>
+To checkout the full project, run the following command:
+</p>
+<pre>
+  $ svn co https://svn9.cvsdude.com/KineticData/arsModels/trunk
+</pre>
+<p>
+To checkout and install the project gem, run the following commands:
+</p>
+<pre>
+  $ svn co https://svn9.cvsdude.com/KineticData/arsModels/trunk/pkg
+  $ gem uninstall ars-models # Do this only if ars-models is already installed
+  $ gem install pkg/ars-models-$VERSION$.gem
+</pre>
+<h3>Including the Ars Models Library</h3>
+<p>
+If Ars Models was installed as a full source package, the library can be
+loaded by calling &#8216;load&#8217; or &#8216;require&#8217; on
+&quot;%PACKAGE_ROOT%/init&quot; or
+&quot;%PACKAGE_ROOT%/lib/ars_models&quot;. For example:
+</p>
+<pre>
+  require File.expand_path(File.join(File.dirname(__FILE__), '..', 'ArsModels', 'lib', 'ars_models'))
+</pre>
+<p>
+If Ars Models was installed as a gem, the library can be loaded by calling
+&#8216;load&#8217; or &#8216;require&#8217; on &quot;ars_models&quot;. For
+example:
+</p>
+<pre>
+  require 'ars_models'
+</pre>
+<h2>Getting Started</h2>
+<p>
+# TODO: Getting Started
+</p>
+<h2>Examples</h2>
+<p>
+# TODO: Examples
+</p>
+<h2>Field Types</h2>
+<p>
+# TODO: Field Type documentation
+</p>
+<h2>More Information</h2>
+<p>
+For more information and sample usage, see the rdoc included with the
+package.
+</p>
+<p>
+Note: If you installed Ars Models via the gem, the rdoc can be accessed by
+starting a gem server. To browse the gemmed rdoc, start a local gem server
+using the command below and open a browser to <a
+href="http://127.0.0.1:8080">127.0.0.1:8080</a>.
+</p>
+<pre>
+  $ jruby -S gem server -p 8080
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

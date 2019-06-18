@@ -1,0 +1,15 @@
+== KineticRequest_ServiceItem_UpdateStatus
+  This handler updates the status of a given service item.
+
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will update
+[Service Item Name]
+  The current name of the service item this handler will update
+[New Status]
+  The new status to update the service item with
+
+==== Sample Configuration
+Catalog Name::       KURL Catalog
+Service Item Name::  Test Service Item
+New Status::         Inactive

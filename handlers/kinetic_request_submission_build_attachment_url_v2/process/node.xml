@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_build_attachment_url" name="Kinetic Request Submission Build Attachment URL" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Builds and returns URL for a file download of an attachment that was uploaded as a question answer.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_submission_build_attachment_url/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="question_menu_label" label="Question Menu Label" required="true"
+            tooltip="The menu label of the question whose attachment answer we want to generate an HTML link to."/>
+		<parameter id="customer_survey_instance_id" label="Customer Survey Instance ID" required="true"
+            tooltip="Instance ID of the customer request."/>
+		<parameter id="survey_template_instance_id" label="Survey Template Instance ID" required="true"
+            tooltip="Instance ID of the Service Item Template."/>
+    </parameters>
+    <handler name="kinetic_request_submission_build_attachment_url" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="question_menu_label">&lt;%= @parameters['question_menu_label'] %&gt;</parameter>
+            <parameter name="customer_survey_instance_id">&lt;%= @parameters['customer_survey_instance_id'] %&gt;</parameter>
+            <parameter name="survey_template_instance_id">&lt;%= @parameters['survey_template_instance_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="URL"/>
+        <result name="File Name"/>
+    </results>
+</taskDefinition>

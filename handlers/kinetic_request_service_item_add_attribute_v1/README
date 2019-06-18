@@ -1,0 +1,18 @@
+== KineticRequest_ServiceItem_AddAttribute
+  This handler adds an attribute to the given service item.
+
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will add an attribute to
+[Service Item Name]
+  The name of the service item this handler will add an attribute to
+[Attribute Name]
+  The name of the attribute that this handler will add
+[Attribute Value]
+  The value that will be used to configure the added attribute
+
+==== Sample Configuration
+Catalog Name::          KURL Catalog
+Service Item Name::     Test Service Item
+Attribute Name::        Category
+Attribute Value::       Testing

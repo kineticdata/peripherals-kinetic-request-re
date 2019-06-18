@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_approval_create" name="Kinetic Request Approval Create" schema_version="1.0" version="4">
+    <author>support@kineticdata.com</author>
+    <!--
+    <contributors>
+      <contributor>unus.gafoor@kineticdata.com</contributor>
+      <contributor>jack.boespflug@kineticdata.com</contributor>
+      <contributor>shayne.koestler@kineticdata.com</contributor>
+      <contributor>linda.koestler@kineticdata.com</contributor>
+      <contributor>ben.christenson@kineticdata.com</contributor>
+    </contributors>
+    -->
+    <description>
+        Creates an approval submission for the submission record specified by
+        the 'Lookup Id' parameter, typically the Instance Id of the originating
+        base request.
+    </description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>true</deferrable>
+    <parameters>
+        <parameter id="approver_login" label="Approver Login:" required="true"
+          tooltip="The Remedy login name of the approver." />
+        <parameter id="approver_email" label="Approver Email:" required="true"
+          tooltip="The email address of the approver." />
+        <parameter id="approver_first_name" label="Approver First Name:" required="true"
+          tooltip="The first name of the approver." />
+        <parameter id="approver_last_name" label="Approver Last Name:" required="true"
+          tooltip="The last name of the approver." />
+        <parameter id="message_template_name" label="Message Template Name:" required="false"
+          tooltip="The name of the message template to use for the approval." />
+        <parameter id="approval_template_catalog_name" label="Approval Template Catalog Name:" required="true"
+          tooltip="The name of the catalog the template for approval belongs to."></parameter>
+        <parameter id="approval_template_name" label="Approval Template Name:" required="true"
+          tooltip="The name of the template to use for the approval." />
+        <parameter id="lookup_id" label="Lookup Id:" required="true"
+          tooltip="The instance id of the Kinetic Request submission that is being approved."></parameter>
+    </parameters>
+    <handler name="kinetic_request_approval_create" version="4">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='lookup_id'>&lt;%= @parameters['lookup_id'] %&gt;</parameter>
+            <parameter name='message_template_name'>&lt;%= @parameters['message_template_name'] %&gt;</parameter>
+            <parameter name='approval_template_catalog_name'>&lt;%= @parameters['approval_template_catalog_name'] %&gt;</parameter>
+            <parameter name='approval_template_name'>&lt;%= @parameters['approval_template_name'] %&gt;</parameter>
+        </parameters>
+        <fields>
+            <!-- 
+            Set the configurable values of the approval.  Also included are:
+              * MessageTemplateInstanceID (calculated from 'message_template_name')
+              * ng_ApprovalFieldID        (calculated from 'approval_question_label')
+              * ng_DenialCommentFieldID   (calculated from 'denial_comments_question_label')
+              * SurveyInstanceID          (calcualted from 'approval_template_catalog_name' and 'approval_template_name')
+            and
+              * LookupValueId             (set to the 'lookup_id' parameter value)
+            and
+              * Form                      (set to the value of "Survey_Template_Name" on the originating request)
+              * OriginatingID             (calculated from the originating request)
+              * OriginatingID_Display     (calculated from the originating request)
+            -->
+            <field name='ValidationStatus'>&lt;%= @info['initial_validation_status'] %&gt;</field>
+            <field name='Contact_Info_Value'>&lt;%= @parameters['approver_email'] %&gt;</field>
+            <field name='First Name'>&lt;%= @parameters['approver_first_name'] %&gt;</field>
+            <field name='Last Name'>&lt;%= @parameters['approver_last_name'] %&gt;</field>
+            <field name='Submitter'>&lt;%= @parameters['approver_login'] %&gt;</field>
+            <field name='Survey_Template_Name'>&lt;%= @parameters['approval_template_name'] %&gt;</field>
+
+            <!-- Store the deferral token so that the approval workflow can close the deferred task upon completion. -->
+            <field name='ng_EndpointSecret'>&lt;%= @task['Deferral Token'] %&gt;</field>
+
+            <!-- Set the hard coded values required for an approval.-->
+            <field name='Submit Type'>Approval</field>
+            <field name='Source'>KS_SRV_CustomerSurvey_base</field>
+        </fields>
+        <!--
+            A list of KS_SRV_CustomerSuvey_base field database names that should
+            be copied from the originating request record to the approval base
+            record.
+
+            Note: There are a number of fields on this form that have different
+            labels than database names.  Please ensure the database names are
+            used.
+        -->
+        <clonedFields>
+            <field name='ApplicationName'/>
+            <field name='AssigneeGroup'/>
+            <field name='Category'/>
+            <field name='CategoryInstanceID'/>
+            <field name='Company ID'/>
+            <field name='Company Name'/>
+            <field name='Data_Set'/>
+            <field name='Survey_Method'/>
+            <field name='Attribute1'/>
+            <field name='Attribute2'/>
+            <field name='Attribute3'/>
+            <field name='Attribute4'/>
+            <field name='Attribute5'/>
+            <field name='Attribute6'/>
+            <field name='Attribute7'/>
+            <field name='Attribute8'/>
+            <field name='Attribute9'/>
+            <field name='Attribute10'/>
+            <field name='Attribute11'/>
+            <field name='Attribute12'/>
+            <field name='Attribute13'/>
+            <field name='Attribute14'/>
+            <field name='Attribute15'/>
+            <field name='Attribute16'/>
+            <field name='Attribute17'/>
+            <field name='Attribute18'/>
+            <field name='Attribute19'/>
+            <field name='Attribute20'/>
+            <field name='Attribute21'/>
+            <field name='Attribute22'/>
+            <field name='Attribute23'/>
+            <field name='Attribute24'/>
+            <field name='Attribute25'/>
+            <field name='Attribute26'/>
+            <field name='Attribute27'/>
+            <field name='Attribute28'/>
+            <field name='Attribute29'/>
+            <field name='Attribute30'/>
+            <field name='Attribute31'/>
+            <field name='Attribute32'/>
+            <field name='Attribute33'/>
+            <field name='Attribute34'/>
+            <field name='Attribute35'/>
+            <field name='Attribute36'/>
+            <field name='Attribute37'/>
+            <field name='Attribute38'/>
+            <field name='Attribute39'/>
+            <field name='Attribute40'/>
+            <field name='Attribute41'/>
+            <field name='Attribute42'/>
+            <field name='Attribute43'/>
+            <field name='Attribute44'/>
+            <field name='Attribute45'/>
+            <field name='Attribute46'/>
+            <field name='Attribute47'/>
+            <field name='Attribute48'/>
+            <field name='Attribute49'/>
+            <field name='Attribute50'/>
+            <field name='Attribute51'/>
+            <field name='Attribute52'/>
+            <field name='Attribute53'/>
+            <field name='Attribute54'/>
+            <field name='Attribute55'/>
+            <field name='Attribute56'/>
+            <field name='Attribute57'/>
+            <field name='Attribute58'/>
+            <field name='Attribute59'/>
+            <field name='Attribute60'/>
+            <field name='Attribute61'/>
+            <field name='Attribute62'/>
+            <field name='Attribute63'/>
+            <field name='Attribute64'/>
+			<field name='Requested By'/>
+			<field name='Requested For'/>
+			<field name='Requested By Displayed Name'/>
+			<field name='Requested For Displayed Name'/>
+			<field name='Assigned Group'/>
+			<field name='Assigned Individual'/>
+			<field name='Assigned Group Displayed Name'/>
+			<field name='Assigned Individual Displayed Name'/>
+			<field name='Due Date'/>
+			<field name='Delivery Date'/>
+        </clonedFields>
+    </handler>
+    <results format="xml">
+        <result name="Instance Id"/>
+        <result name="Validation Status"/>
+    </results>
+</taskDefinition>

@@ -1,0 +1,24 @@
+== KineticRequest_Submission_Close_V1
+Updates the Validation Status, the status that is displayed to the end user, of
+the specified Kinetic Request submission record and sets the Request Status to
+"Closed".
+
+The Validation Status is an arbitrary string that represents the status value
+that is displayed to the end user (such as "In Progress" or "Awaiting Approval")
+that is typically displayed within the launcher page of a Service Catalog.
+
+The Request Status represents the overall completion status of the entire
+service request.  This includes any task processing that is associated with the
+submitted service item.  This value must be "Open" or "Closed".
+
+=== Parameters
+[Validation Status]
+  The value the Validation Status field on the specified Kinetic Request
+  submission record will be set to.
+[Submission Id]
+  The instance id of the Kinetic Request submission to be updated (defaults to
+  "<%=@base['CustomerSurveyInstanceId']%>").
+
+==== Sample Configuration
+Validation Status::           Awaiting Approval
+Submission Id::               <%=@base['CustomerSurveyInstanceId']%>

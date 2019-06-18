@@ -1,0 +1,8 @@
+
+  
+kinetic_request_submission_dataset_retrieve V2 (2015-07-15)
+* Updated to support v3 or v4 task
+  
+kinetic_request_submission_dataset_retrieve V1 
+* Initial version.  See README for details.
+

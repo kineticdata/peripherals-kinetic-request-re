@@ -1,0 +1,61 @@
+ArsModels v0.0.7 (2009-07-29)
+* Improved ArsModels support for implementation in existing Java virtual
+  machines (for example Tomcat or a wrapping program) by not loading the arapi,
+  arutil, or ArsModels jar files if the classes are already available in the
+  virtual machine.
+* Implemented Ars context support for authentication and RPC prognum.
+* Implemented constants ArsModels::ARAPI_VERSION and ArsModels::VERSION.
+* Implemented join form support.
+* Packages multiple Arapi versions for testing and changes loading strategy from
+  selecting whatever is in the directory to checking ENV["ARAPI_VERSION"] and
+  loading either that specified version or the most recent library available.
+* Significant Exception message improvements.
+
+ArsModels v0.0.6 (2009-06-11)
+* Implemented java reflection solution for ars enumeration field multi-version
+  management.
+* Implemented dynamic ars java library loading in the ars_models.rb loader; this
+  will automatically load any version of the arapi/arutil jar files present in
+  the lib/jars directory.
+
+ArsModels v0.0.5 (2009-05-06)
+* Minor usibility enhancement to Entry.find that allows the :conditions
+  parameter to be blank.
+* Multiple bug fixes associated with Entry.find(:first, ...) and
+  Entry.find(:last, ...)
+* Minor bug fix to default sorting of entries (switched from defaulting to field
+  id 1 to defaulting to the form's default sort order).
+
+ArsModels v0.0.4 (2009-04-24)
+* Date, DateTime, and TimeOfDay field handling
+* Multiple bug fixes associated with Entry.find(:single, ...)
+
+ArsModels v0.0.3 (2009-03-25)
+* Better enumeration field handling.
+* Diary field type implementation.
+* Minor bug fix to ArsModels::Entry#save! so that any combination of
+  entry/entry ids can be passed to the update methods.
+* Modification of RDoc specification (line numbers, inline source, title).
+* Minor documentation updates.
+
+ArsModels v0.0.2 (2009-02-14)
+* Test suite implementation.
+* Implementation of context instances for Form and Entry.
+* ArsModels::Entry.delete renamed to ArsModels::Entry.delete!
+* ArsModels::Entry.save! made private and replaced with ArsModels::Entry.create!
+* ArsModels::Entry#save! and ArsModels::Entry#update_attributes! implemented
+* ArsModels::Entry.update! implemented
+* ArsModels::Entry modified attributes cache implemented (only modified
+  attributes will be updated on save
+* ArsModels::Entry relevant field specification retained between instance calls
+* Significant error handling improvements
+* Multitude of backend bug fixes and usibility enhancements.
+
+ArsModels v0.0.1 (2009-01-14)
+* Added in support for creating / modifying Ars schemas.
+* Moved ruby ars-models wrapper code from the ArsRecord Japi Adapter into this
+  library.
+* Configured package to produce usible gem file.
+
+ArsModels v0.1a (2008-12-02)
+* Initial Deployment

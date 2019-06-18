@@ -1,0 +1,39 @@
+== KAPP_Assignment_Group_Membership_Lookup
+Retrieves the login and email information for the assignee or group
+members of the specified group.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Assignee Login Id]
+  The login ID of the Assignee, if there is one.
+
+[Support Group Id]
+  The ID of the assigned support group.
+
+==== Sample Configuration
+Assignee Login Id::     Allen
+Support Group Id::      000000000000003
+OR
+Assignee Login Id::     <%=@results['Retrieve Work Order']['AssignedIndividualID']%>
+Support Group Id::      <%=@results['Retrieve Work Order']['AssignedGroupID']%>
+
+=== Results
+[Email List]
+  Comma delimited list of email addresses of the group members if no assignee provided. 
+  Assignee email if assignee provided.
+  
+[Membership List]
+   XML list of all membership of the group if no assignee provided. XML list of just 
+   assignee login ID if assignee provided.
+   
+=== Detailed Description
+If an assignee is provided, only their information is returned. Otherwise, emails and 
+login information for everyone in the group is returned.
+
+Emails are comma delimited. XML format of the membership list looks like this:
+<membership>
+	<member>Allen</member>
+	<member>Mary</member>
+</membership>
+

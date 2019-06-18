@@ -1,0 +1,5 @@
+kinetic_tabular_data_retrieve (2012-09-18)
+ * Initial version.  See README for details.
+ V2 - Increased row count from 10 to 20
+ V3 - Corrected Init to contain correct label names
+

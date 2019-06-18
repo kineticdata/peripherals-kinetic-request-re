@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_tabular_data_find" name="Kinetic Tabular Data Find" schema_version="1.0" version="2">
+    <author>anne.ramey@kineticdata.com</author>
+    <description>
+	    Retrieves request IDs (field 1) and Instance IDs (field 179) for Remedy entries for the form
+		used for storing table data.
+	</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="SurveyInstanceID" label="Survey Instance ID" required="false"
+            tooltip="Survey Instance ID"></parameter>
+		<parameter id="Survey_Template_Name" label="Survey Template Name" required="false"
+            tooltip="Survey Template Name"></parameter>
+		<parameter id="CustomerSurveyInstanceID" label="Originating ID" required="false"
+            tooltip="Associated Request GUID"></parameter>
+		<parameter id="Table Name" label="Table Name" required="false"
+            tooltip="Table Name"></parameter>
+		<parameter id="Value1" label="Value1" required="false"
+            tooltip="Value in Column 1"></parameter>
+		<parameter id="Value2" label="Value2" required="false"
+            tooltip="Value in Column 2"></parameter>
+		<parameter id="Value3" label="Value3" required="false"
+            tooltip="Value in Column 3"></parameter>
+		<parameter id="Value4" label="Value4" required="false"
+            tooltip="Value in Column 4"></parameter>
+		<parameter id="Value5" label="Value5" required="false"
+            tooltip="Value in Column 5"></parameter>
+		<parameter id="Value6" label="Value6" required="false"
+            tooltip="Value in Column 6"></parameter>
+		<parameter id="Value7" label="Value7" required="false"
+            tooltip="Value in Column 7"></parameter>
+		<parameter id="Value8" label="Value8" required="false"
+            tooltip="Value in Column 8"></parameter>
+		<parameter id="Value9" label="Value9" required="false"
+            tooltip="Value in Column 9"></parameter>
+		<parameter id="Value10" label="Value10" required="false"
+            tooltip="Value in Column 10"></parameter>
+		<parameter id="Value11" label="Value11" required="false"
+            tooltip="Value in Column 11"></parameter>
+		<parameter id="Value12" label="Value12" required="false"
+            tooltip="Value in Column 12"></parameter>
+		<parameter id="Value13" label="Value13" required="false"
+            tooltip="Value in Column 13"></parameter>
+		<parameter id="Value14" label="Value14" required="false"
+            tooltip="Value in Column 14"></parameter>
+		<parameter id="Value15" label="Value15" required="false"
+            tooltip="Value in Column 15"></parameter>
+		<parameter id="Value16" label="Value16" required="false"
+            tooltip="Value in Column 16"></parameter>
+		<parameter id="Value17" label="Value17" required="false"
+            tooltip="Value in Column 17"></parameter>
+		<parameter id="Value18" label="Value18" required="false"
+            tooltip="Value in Column 18"></parameter>
+		<parameter id="Value19" label="Value19" required="false"
+            tooltip="Value in Column 19"></parameter>
+		<parameter id="Value20" label="Value20" required="false"
+            tooltip="Value in Column 20"></parameter>
+		
+    </parameters>
+    <handler name="kinetic_tabular_data_find" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+			<info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+			<parameter name='SurveyInstanceID'>&lt;%=@parameters['SurveyInstanceID']%&gt;</parameter>
+			<parameter name='Survey_Template_Name'>&lt;%=@parameters['Survey_Template_Name']%&gt;</parameter>
+			<parameter name='CustomerSurveyInstanceID'>&lt;%=@parameters['CustomerSurveyInstanceID']%&gt;</parameter>
+			<parameter name='Table Name'>&lt;%=@parameters['Table Name']%&gt;</parameter>
+			<parameter name='Value1'>&lt;%=@parameters['Value1']%&gt;</parameter>
+			<parameter name='Value2'>&lt;%=@parameters['Value2']%&gt;</parameter>
+			<parameter name='Value3'>&lt;%=@parameters['Value3']%&gt;</parameter>
+			<parameter name='Value4'>&lt;%=@parameters['Value4']%&gt;</parameter>
+			<parameter name='Value5'>&lt;%=@parameters['Value5']%&gt;</parameter>
+			<parameter name='Value6'>&lt;%=@parameters['Value6']%&gt;</parameter>
+			<parameter name='Value7'>&lt;%=@parameters['Value7']%&gt;</parameter>
+			<parameter name='Value8'>&lt;%=@parameters['Value8']%&gt;</parameter>
+			<parameter name='Value9'>&lt;%=@parameters['Value9']%&gt;</parameter>
+			<parameter name='Value10'>&lt;%=@parameters['Value10']%&gt;</parameter>
+			<parameter name='Value11'>&lt;%=@parameters['Value11']%&gt;</parameter>
+			<parameter name='Value12'>&lt;%=@parameters['Value12']%&gt;</parameter>
+			<parameter name='Value13'>&lt;%=@parameters['Value13']%&gt;</parameter>
+			<parameter name='Value14'>&lt;%=@parameters['Value14']%&gt;</parameter>
+			<parameter name='Value15'>&lt;%=@parameters['Value15']%&gt;</parameter>
+			<parameter name='Value16'>&lt;%=@parameters['Value16']%&gt;</parameter>
+			<parameter name='Value17'>&lt;%=@parameters['Value17']%&gt;</parameter>
+			<parameter name='Value18'>&lt;%=@parameters['Value18']%&gt;</parameter>
+			<parameter name='Value19'>&lt;%=@parameters['Value19']%&gt;</parameter>
+			<parameter name='Value20'>&lt;%=@parameters['Value20']%&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="RequestIdList"/>
+		<result name="InstanceIdList"/>
+    </results>
+</taskDefinition>

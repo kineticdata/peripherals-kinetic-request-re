@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_tabular_data_create" name="Kinetic Table Data Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <!--
+    <contributors>
+      <contributor>chris.woyton@kineticdata.com</contributor>
+	  <contributor>anne.ramey@kineticdata.com</contributor>
+    </contributors>
+    -->
+    <description>
+        Creates an entry in the CUSTOM:KS_SRV_TableData_base form
+    </description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+     <parameters>
+	    <parameter id="input_json" label="JSON String:" required="true" tooltip="Serialized table data in JSON format"/>
+        <parameter id="table_name" label="Table Name:" required="true" tooltip="Identifier for the table"/>
+        <parameter id="originating_id" label="Originating ID:" required="true" tooltip="Associated Request GUID"/>
+        <parameter id="template_name" label="Template Name:" required="false" tooltip="The originating Request Template name."/>
+		<parameter id="template_id" label="Template Instance ID:" required="false" tooltip="The originating Request Template ID."/>
+      </parameters>
+    <handler name="kinetic_tabular_data_create" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='input_json'>&lt;%= @parameters['input_json'] %&gt;</parameter>
+            <parameter name='table_name'>&lt;%= @parameters['table_name'] %&gt;</parameter>
+			<parameter name='originating_id'>&lt;%= @parameters['originating_id'] %&gt;</parameter>
+            <parameter name='template_name'>&lt;%= @parameters['template_name'] %&gt;</parameter>	
+			<parameter name='template_id'>&lt;%= @parameters['template_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+		<result name="Table Data Request Id List"/>
+        <result name="Table Data Instance Id List"/>
+        <result name="Table Data Row Count"/>		
+    </results>
+</taskDefinition>

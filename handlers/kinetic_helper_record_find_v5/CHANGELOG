@@ -1,0 +1,17 @@
+kinetic_helper_record_find_V5 (2014-11-21)
+* Added Status to search (bug fix)
+
+kinetic_helper_record_find_V4 (2013-12-10)
+* Added Index fields
+
+kinetic_helper_record_find_V3 (2013-11-04)
+* Added Status, more Character fields, and integer 
+fields to the search criteria.
+  
+kinetic_helper_record_find_V2 (2012-11-15)
+* Updated to return NIL if no match found instead
+  of raising an error.
+  
+kinetic_helper_record_find_V1 (2012-10-10)
+* Initial version.  See README for details.
+

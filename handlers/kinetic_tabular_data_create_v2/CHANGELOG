@@ -1,0 +1,10 @@
+(2017-06-21)
+* Update dependencies.rb to only load JSON in Task 3 and below to make it
+  compatible with Task 4 and above
+
+Kinetic Table Data Create V2 (2013-06-17)
+* Updated the returned request ID list to be XML
+* Added XML list of Instancd IDs to results
+
+Kinetic Table Data Create V1 
+* Initial version.  See README for details.

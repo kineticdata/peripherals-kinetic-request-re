@@ -1,0 +1,4 @@
+<results>
+    <result name="Instance Id" type="Regexp">.+</result>
+	<result name="KSR" type="Regexp">.+</result>
+</results>

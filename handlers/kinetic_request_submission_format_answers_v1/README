@@ -1,0 +1,63 @@
+== KineticRequest_Submission_FormatAnswers
+Builds a simple result string by formatting a specified subset of answers for
+the source Kinetic Request submission.
+
+To specify the answers to be formatted, any of the following can be configured
+(the answers will be sequenced in the normal page order of their corresponding
+questions):
+* A starting question menu label (if the starting question is not provided, the
+  first question of the service item will be used).
+* An ending question menu label (if the ending question is not provided, the
+  last question of the service item will be used).
+* A comma separated list of question menu labels to explicitely include
+  (questions included in this list will be included even if they do not exist
+  between the starting and ending questions).
+* A comma separated list of question menu labels to explicitely exclude
+  (questions included in this list will not be included, even if they exist
+  between the starting and ending questions, or were specified in the 'Included
+  Questions' parameter).
+
+This handler will format the results as such:
+  Answers:
+  QUESTION_MENU_LABEL: ANSWER
+  ...
+  QUESTION_MENU_LABEL: ANSWER
+
+=== Parameters
+[Starting Question]
+  The menu label of the first question that should be formatted.  If this is
+  left blank, the first question on the service item will be used.
+[Ending Question]
+  The menu label of the last question that should be formatted.  If this is
+  left blank, the last question on the service item will be used.
+[Included Questions]
+  A comma separated list of question menu labels that should be explicitely
+  included in the question list.  Questions included in this list will be 
+  included even if they do not exist between the starting and ending questions.
+  Whitespace matters; ensure there are no spaces after a comma separating the
+  menu labels (unless the question menu label includes a preceding space).
+[Excluded Questions]
+  A comma separated list of question menu labels that should be explicitely
+  excluded in the question list.  Questions included in this list will be
+  excluded even if they exist between the starting and ending questions or are
+  included in the 'Included Question' parameter.  Whitespace matters; ensure
+  there are no spaces after a comma separating the menu labels (unless the
+  question menu label includes a preceding space).
+
+==== Sample Configuration
+*Simple Configuration*
+Starting Question::           
+Ending Question::             
+Included Questions::          
+Excluded Questions::          
+
+*Advanced Configuration*
+Starting Question::           Question 1
+Ending Question::             Question 6
+Included Questions::          Question 11,Question 12,Question 19
+Excluded Questions::          Question 2,Question 5
+
+=== Results
+[result]
+  The string result of answers referenced by the starting/ending question and
+  included/excluded questions parameters.

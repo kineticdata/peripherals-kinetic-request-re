@@ -1,0 +1,19 @@
+== KineticRequest_ServiceItem_Detect
+  This handler checks to see if a given service item already exists.  The
+  uniqueness of a service item determined by the combination of its name and its
+  catalog name.
+
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will attempt to detect
+[Service Item Name]
+  The name of the service item this handler attempt to detect
+
+==== Sample Configuration
+Catalog Name::          KURL Catalog
+Service Item Name::     Test Service Item
+
+=== Results
+[Exists]
+  A "Yes" or "No" value depending on whether the service item specified exists
+  or not.

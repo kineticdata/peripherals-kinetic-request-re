@@ -1,0 +1,5 @@
+<results>
+    <result name="Table Data Request Id List" type="Regexp">.+</result>
+	<result name="Table Data Instance Id List" type="Regexp">.+</result>
+    <result name="Table Data Row Count" type="Regexp">.+</result>	
+</results>

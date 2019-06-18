@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_submission_update_attribute" name="Kinetic Submission Update Attribute" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Updates the Kinetic Request base request with the specified values</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+<parameters>
+    <parameter id="submission_id" required="true" label="Submission ID" tooltip="Instance ID of the Submission to Update"/>
+    <parameter id="attribute_name" required="true" label="Attribute Field Name" tooltip="Field name to Update"/>
+    <parameter id="attribute_value" required="true" label="Field Value" tooltip="Value for the Update"/>
+
+</parameters>
+<handler name="kinetic_submission_update_attribute" version="1">
+    <infos>
+        <info name="server">&lt;%= @info['server'] %&gt;</info>
+        <info name="username">&lt;%= @info['username'] %&gt;</info>
+        <info name="password">&lt;%= @info['password'] %&gt;</info>
+        <info name="port">&lt;%= @info['port'] %&gt;</info>
+        <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+        <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+    </infos>
+    <parameters>
+    <parameter name="submission_id">&lt;%= @parameters['submission_id'] %&gt;</parameter>
+    <parameter name="attribute_name">&lt;%= @parameters['attribute_name'] %&gt;</parameter>
+    <parameter name="attribute_value">&lt;%= @parameters['attribute_value'] %&gt;</parameter>
+    </parameters>
+</handler>
+<results format="xml">
+    <result name="Entry ID"/>
+</results>
+</taskDefinition>

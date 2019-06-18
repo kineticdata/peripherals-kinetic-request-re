@@ -1,0 +1,34 @@
+== Kinetic_Request_Answer_Update
+Kinetic Request Answer Retrieve retrieves an Answer value for an existing Request. 
+
+If no Question is found with the specified Name and Catalog, the handler will throw an exception. If
+there is no Answer record for the Question, the handler will return nil.
+
+=== Parameters
+[Submission Instance ID]
+The Instance ID of the Request from which the Answer is retrieved.
+
+[Template Name]
+The Name of the Request Template used by the Submission being queried. This value is used
+to find the correct Question in KS_SRV_SurveyQuestion so that the Question Name can be
+used as a parameter rather than the Question Instance ID.
+
+[Question Name]
+The Name value for the Question in KS_SRV_SurveyQuestion. This value is used in conjunction
+with the Template Name parameter to find the correct Question.
+
+
+
+==== Sample Configuration
+
+Submission Instance ID 	- <%=@dataset['OriginatingID']%>
+Template Name		- New Hire Onboarding
+Question Name		- Alternate Email
+Question Value		= newbie@mycompany.com
+
+
+=== Results
+[Value]
+Returns the Full Answer Value for the specified Question from the specified Request.
+
+=== Detailed Description

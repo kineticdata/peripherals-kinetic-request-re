@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGELOG</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGELOG</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGELOG
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Wed Jul 29 14:45:52 -0500 2009</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+ArsModels v0.0.7 (2009-07-29)
+</p>
+<ul>
+<li>Improved ArsModels support for implementation in existing Java virtual
+machines (for example Tomcat or a wrapping program) by not loading the
+arapi, arutil, or ArsModels jar files if the classes are already available
+in the virtual machine.
+
+</li>
+<li>Implemented Ars context support for authentication and RPC prognum.
+
+</li>
+<li>Implemented constants ArsModels::ARAPI_VERSION and ArsModels::VERSION.
+
+</li>
+<li>Implemented join form support.
+
+</li>
+<li>Packages multiple Arapi versions for testing and changes loading strategy
+from selecting whatever is in the directory to checking
+ENV[&quot;ARAPI_VERSION&quot;] and loading either that specified version or
+the most recent library available.
+
+</li>
+<li>Significant Exception message improvements.
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.6 (2009-06-11)
+</p>
+<ul>
+<li>Implemented java reflection solution for ars enumeration field
+multi-version management.
+
+</li>
+<li>Implemented dynamic ars java library loading in the ars_models.rb loader;
+this will automatically load any version of the arapi/arutil jar files
+present in the lib/jars directory.
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.5 (2009-05-06)
+</p>
+<ul>
+<li>Minor usibility enhancement to Entry.find that allows the :conditions
+parameter to be blank.
+
+</li>
+<li>Multiple bug fixes associated with Entry.find(:first, &#8230;) and
+Entry.find(:last, &#8230;)
+
+</li>
+<li>Minor bug fix to default sorting of entries (switched from defaulting to
+field id 1 to defaulting to the form&#8216;s default sort order).
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.4 (2009-04-24)
+</p>
+<ul>
+<li>Date, DateTime, and TimeOfDay field handling
+
+</li>
+<li>Multiple bug fixes associated with Entry.find(:single, &#8230;)
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.3 (2009-03-25)
+</p>
+<ul>
+<li>Better enumeration field handling.
+
+</li>
+<li>Diary field type implementation.
+
+</li>
+<li>Minor bug fix to ArsModels::Entry#save! so that any combination of
+entry/entry ids can be passed to the update methods.
+
+</li>
+<li>Modification of RDoc specification (line numbers, inline source, title).
+
+</li>
+<li>Minor documentation updates.
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.2 (2009-02-14)
+</p>
+<ul>
+<li>Test suite implementation.
+
+</li>
+<li>Implementation of context instances for Form and Entry.
+
+</li>
+<li>ArsModels::Entry.delete renamed to ArsModels::Entry.delete!
+
+</li>
+<li>ArsModels::Entry.save! made private and replaced with
+ArsModels::Entry.create!
+
+</li>
+<li>ArsModels::Entry#save! and ArsModels::Entry#update_attributes! implemented
+
+</li>
+<li>ArsModels::Entry.update! implemented
+
+</li>
+<li><a href="../classes/ArsModels/Entry.html">ArsModels::Entry</a> modified
+attributes cache implemented (only modified attributes will be updated on
+save
+
+</li>
+<li><a href="../classes/ArsModels/Entry.html">ArsModels::Entry</a> relevant
+field specification retained between instance calls
+
+</li>
+<li>Significant error handling improvements
+
+</li>
+<li>Multitude of backend bug fixes and usibility enhancements.
+
+</li>
+</ul>
+<p>
+ArsModels v0.0.1 (2009-01-14)
+</p>
+<ul>
+<li>Added in support for creating / modifying Ars schemas.
+
+</li>
+<li>Moved ruby ars-models wrapper code from the ArsRecord Japi Adapter into
+this library.
+
+</li>
+<li>Configured package to produce usible gem file.
+
+</li>
+</ul>
+<p>
+ArsModels v0.1a (2008-12-02)
+</p>
+<ul>
+<li>Initial Deployment
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

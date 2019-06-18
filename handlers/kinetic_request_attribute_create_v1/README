@@ -1,0 +1,54 @@
+== kinetic_request_attribute_create
+Creates attributes(KS_ATT_AttributeInstance) for the Kinetic Request
+Templates specified in the CSV File.
+
+=== Parameters
+[Customer Survey Instance ID]
+  The instance id of the Kinetic Request submission to be updated (defaults to
+  "<%=@base['CustomerSurveyInstanceId']%>").
+[Survey Template Instance ID]
+  The instance id of the Kinetic Request Template to be updated (defaults to
+  "<%=@base['surveyTemplateInstanceID']%>").
+[CSV File]
+  Menu label of the attachment field
+[Attribute List]
+  This field should contain the list of attributes to be loaded in a comma separated list, 
+  with no space after the comma. The only spaces should be the ones in the attribute names.
+
+=== Result 
+[Status]
+   Contains "Successful" if the processing was successful
+[Result Message]
+   Contains the number of service items process, the number of those service items that
+   were skipped, and the number of attributes that were skipped.
+   
+==== Sample Configuration
+Customer Survey Instance ID::  <%=@base['CustomerSurveyInstanceId']%>
+Survey Template Instance ID::  <%=@base['surveyTemplateInstanceID']%>
+CSV File::                     Attachment
+Attribute List::               Category,IncidentTemplate
+
+== Sample Result
+Status::          Success
+Result Message::  3 Rows Processed. 1 Service Items Not Found. 1 Attributes Not Found
+
+== Description
+
+This handlers uses the CSV file attached to the specified Customer Survey Instance ID
+of the template with Survey Template Instance ID in the question CSV File and processes
+the attributes listed in Attribute List for all rows of the csv. One of the columns in 
+the CSV *must* be called Service Item Name and this must contain the Service Item name
+for that row. 
+
+If the handler can't match the Service Item Name to an existing template, it will skip 
+that row and continue on. If the handler can't match an attribute in Attribute List with
+an Attribute Type in the system, the handler will skip that column and continue on. The
+handler will only process columns for attributes in Attribute List even if there are 
+other columns in the file. 
+
+Note: This handler does not check for existing attributes. If an attribute already exists
+and allows multiple, this will create a duplicate. If the attribute already exists and
+doesn't allow multiple, this handler will fail.
+
+NOTE: This handler expects the service item name(s) to be unique on the system, not just in
+a catalog. Changes will have to be made if this is not the case.

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_answer_retrieve" name="Kinetic Request Answer Retrieve" schema_version="1.0" version="4">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves a Submission Answer</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+<parameters>
+    <parameter id="SubmissionInstanceID" required="true" label="Submission Instance ID" tooltip="Submission Instance ID"/>
+    <parameter id="QuestionName" required="true" label="Question Name" tooltip="Question Name"/>
+    <parameter id="TemplateName" required="true" label="Template Name" tooltip="Template Name"/>
+</parameters>
+<handler name="kinetic_request_answer_retrieve" version="4">
+    <infos>
+        <info name="server">&lt;%= @info['server'] %&gt;</info>
+        <info name="username">&lt;%= @info['username'] %&gt;</info>
+        <info name="password">&lt;%= @info['password'] %&gt;</info>
+        <info name="port">&lt;%= @info['port'] %&gt;</info>
+        <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+        <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+		<info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+    </infos>
+<parameters>
+    <parameter name="SubmissionInstanceID">&lt;%= @parameters['SubmissionInstanceID'] %&gt;</parameter>
+    <parameter name="QuestionName">&lt;%= @parameters['QuestionName'] %&gt;</parameter>
+    <parameter name="TemplateName">&lt;%= @parameters['TemplateName'] %&gt;</parameter>
+</parameters>
+</handler>
+<results format="xml">
+    <result name="Value"/>
+</results>
+</taskDefinition>

@@ -1,0 +1,152 @@
+== kinetic_tabular_data_retrieve
+Retrieves a single CUSTOM:KS_SRV_TableData_base entry with the 
+Instance Id specified.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[Instance ID]
+  The Instance ID associated to the CUSTOM:KS_SRV_TableData_base record
+  (row) to retrieve
+
+=== Sample Configuration
+Instance Id::        <%=@answers['InstanceId']%>
+
+=== Results
+[CustomerSurveyInstanceID]
+  The 'CustomerSurveyInstanceID' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+[Survey_Template_Name]
+  The 'Survey_Template_Name' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+[SurveyInstanceID]
+  The 'SurveyInstanceID' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+[Table Name]
+  The 'Table Name' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+[Label1]
+  The 'Label1' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 1 of the saved table.
+[Value1]
+  The 'Value1' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 1 of this row the saved table.
+[Label2]
+  The 'Label2' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 2 of the saved table.
+[Value2]
+  The 'Value2' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 2 of this row the saved table.
+[Label3]
+  The 'Label3' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 3 of the saved table.
+[Value3]
+  The 'Value3' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 3 of this row the saved table.
+[Label4]
+  The 'Label4' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 4 of the saved table.
+[Value4]
+  The 'Value4' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 4 of this row the saved table.
+[Label5]
+  The 'Label5' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 5 of the saved table.
+[Value5]
+  The 'Value5' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 5 of this row the saved table.
+[Label6]
+  The 'Label6' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 6 of the saved table.
+[Value6]
+  The 'Value6' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 6 of this row the saved table.
+[Label7]
+  The 'Label7' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 7 of the saved table.
+[Value7]
+  The 'Value7' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 7 of this row the saved table.
+[Label8]
+  The 'Label8' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 8 of the saved table.
+[Value8]
+  The 'Value8' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 8 of this row the saved table.
+[Label9]
+  The 'Label9' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 9 of the saved table.
+[Value9]
+  The 'Value9' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 9 of this row the saved table.
+[Label10]
+  The 'Label10' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 10 of the saved table.
+[Value10]
+  The 'Value10' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 10 of this row the saved table.
+[Label11]
+  The 'Label11' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 11 of the saved table.
+[Value11]
+  The 'Value11' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 11 of this row the saved table.
+[Label12]
+  The 'Label2' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 12 of the saved table.
+[Value12]
+  The 'Value12' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 12 of this row the saved table.
+[Label13]
+  The 'Label13' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 13 of the saved table.
+[Value13]
+  The 'Value13' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 13 of this row the saved table.
+[Label14]
+  The 'Label14' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 14 of the saved table.
+[Value14]
+  The 'Value14' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 14 of this row the saved table.
+[Label15]
+  The 'Label15' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 15 of the saved table.
+[Value15]
+  The 'Value15' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 15 of this row the saved table.
+[Label16]
+  The 'Label16' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 16 of the saved table.
+[Value16]
+  The 'Value16' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 16 of this row the saved table.
+[Label17]
+  The 'Label17' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 17 of the saved table.
+[Value17]
+  The 'Value17' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 17 of this row the saved table.
+[Label18]
+  The 'Label18' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 18 of the saved table.
+[Value18]
+  The 'Value18' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 18 of this row the saved table.
+[Label19]
+  The 'Label19' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 19 of the saved table.
+[Value19]
+  The 'Value19' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 19 of this row the saved table.
+[Label120]
+  The 'Label20' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the header of column 20 of the saved table.
+[Value20]
+  The 'Value20' of the retrieved CUSTOM:KS_SRV_TableData_base record.
+  This is the value of column 20 of this row the saved table.
+
+=== Detailed Description
+Retrieves a single CUSTOM:KS_SRV_TableData_base entry with the 
+Instance Id specified. This is equivalent to retrieving a row
+of data that the customer entered into a table. This allows
+for activity on an entire row of data, usually within a loop,
+rather that just a single column of data (which can be accessed
+just by turning the json into XML and looping through that 
+result)

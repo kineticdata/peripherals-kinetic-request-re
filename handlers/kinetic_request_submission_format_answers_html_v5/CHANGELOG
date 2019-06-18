@@ -1,0 +1,20 @@
+KineticRequest_Submission_FormatAnswers__HTML v5 (2015-12-18)
+* 5.2 version. Handles 5.2 unlimited answers.
+
+KineticRequest_Submission_FormatAnswers__HTML_V4 (2015-04-17)
+*Added ability to add template name as title
+*Added ability to add review link as footer
+*Fixed issue with starting and ending questions needing to be required.
+*Added basic HTML escaping for answer and question labels for the result
+
+KineticRequest_Submission_FormatAnswers__HTML_V3
+*Bug fix to use correct key to access records
+*WARNING: known error: doesn't handle empty starting question well. Be sure 
+ specified starting question is a required question.
+
+KineticRequest_Submission_FormatAnswers__HTML_V2 (2012-07-20)
+* uses specified submission, not necessarily the current one
+* displays question labels in the results rather than question names
+
+KineticRequest_Submission_FormatAnswers__HTML_V1 (2012-07-19)
+* Initial version.  See README for details.

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_base_retrieve" name="Kinetic Request Base Submission Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Retrieves a specific Kinetic Request base record from the KS_SRV_CustomerSurvey_base form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="Submission ID" label="Submission ID" required="true"
+            tooltip="Enter the Customer Survey ID or instanceId of the KS_SRV_CustomerSurvey_base form"></parameter>	
+    </parameters>
+    <handler name="kinetic_request_submission_base_retrieve" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+            <parameter name="Submission ID">&lt;%= @parameters['Submission ID'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+		<result name='#MENU PLACE HOLDER#'/>
+    </results>
+</taskDefinition>

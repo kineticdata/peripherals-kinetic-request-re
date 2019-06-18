@@ -1,0 +1,5 @@
+kinetic_helper_record_update_V2 (2013-12-09)
+* Looks up by Request ID alone...search no longer includes active status
+
+kinetic_helper_record_update_V1 (2012-10-09)
+* Initial version.  See README for details.

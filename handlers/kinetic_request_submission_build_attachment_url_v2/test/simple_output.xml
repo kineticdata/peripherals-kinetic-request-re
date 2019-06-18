@@ -1,0 +1,4 @@
+<results>
+    <result name="URL" type="Regexp">.+</result>
+    <result name="File Name" type="Regexp">.+</result>
+</results>

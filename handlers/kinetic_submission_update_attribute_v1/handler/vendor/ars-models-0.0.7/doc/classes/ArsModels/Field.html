@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ArsModels::Field</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ArsModels::Field</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ars_models/field_rb.html">
+                lib/ars_models/field.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Base.html">
+                Base
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Ruby wrapper class for the java com.kd.ars.models.structure.ArsField
+object. Instances of <a href="Field.html">Field</a> represent a single Ars
+field.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000047">new</a>&nbsp;&nbsp;
+      <a href="#M000048">to_xml</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ars_field</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Internal JAPI representation of the com.kd.ars.models.structure.ArsField
+object
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">datatype</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The field datatype (such as &#8216;CHAR&#8217;, &#8216;DATE&#8217;, or
+&#8216;ATTACHMENT&#8217;).
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">default_value</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The default value of the field.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">entrymode</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The field entrymode (such as &#8216;SYSTEM&#8217;, &#8216;REQUIRED&#8217;,
+or &#8216;OPTIONAL&#8217;)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The field identifier.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">label</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The label of the field on the default view.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The field database name.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="#M000047" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Field.html#M000047">new</a> <a
+href="Field.html">Field</a> object. This can be used to generate a <a
+href="Field.html">Field</a> manually or to build a <a
+href="Field.html">Field</a> from a JAPI ArsField object. <tt>name</tt> and
+<tt>datatype</tt> are required attributes.
+</p>
+<p>
+<b>Manual Generation:</b>
+</p>
+<p>
+Valid Options: +:datatype+, +:default_value+, +:entrymode+, +:id+,
++:label+, +:name+
+</p>
+<pre>
+  field = Field.new(:name =&gt; 'First Name', :datatype =&gt; 'CHAR')
+</pre>
+<p>
+<b>JAPI Build:</b>
+</p>
+<pre>
+  field = Field.new(new com.kd.ars.models.structure.ArsField('First Name', 'CHAR'))
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ars_models/field.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+36:       <span class="ruby-comment cmt"># Call the ArsModels::Base initializer and delegate to the build or generate method</span>
+37:       <span class="ruby-keyword kw">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+38:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="#M000048" class="method-signature">
+          <span class="method-name">to_xml</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the xml representation of the field. For example, field 1 (Request
+ID) would be in the following format:
+</p>
+<pre>
+  &lt;field datatype=&quot;CHAR&quot; entrymode=&quot;SYSTEM&quot; id=&quot;1&quot; label=&quot;Request ID&quot; name=&quot;Request ID&quot;/&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000048-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ars_models/field.rb, line 86</span>
+86:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_xml</span>
+87:       <span class="ruby-comment cmt"># Defer xml generation to the com.kd.ars.models.structure.ArsField object</span>
+88:       <span class="ruby-ivar">@ars_field</span>.<span class="ruby-identifier">to_xml_string</span>
+89:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

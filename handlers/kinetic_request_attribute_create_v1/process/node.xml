@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_attribute_create" name="Kinetic Request Attribute Create" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Populates Attributes Records (Settings Tab) for Service Items from a CSV data file
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="customer_survey_instance_id" label="Customer Survey Instance ID" required="true" tooltip="">&lt;%= @base['CustomerSurveyInstanceId'] %&gt;</parameter>
+		<parameter id="survey_template_instance_id" label="Survey Template Instance ID" required="true" tooltip="">&lt;%= @base['surveyTemplateInstanceID'] %&gt;</parameter>
+		<parameter id="csv_file" label="CSV File" required="true" tooltip="Menu label of the attachment field"></parameter>
+		<parameter id="attribute_list" label="Attribute List" required="true" tooltip="This field should contain the list of attributes to be loaded in a comma separated list, with no space after the comma. The only spaces should be the ones in the attribute names."></parameter>
+    </parameters>
+    <handler name="kinetic_request_attribute_create" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="csv_file">&lt;%= @parameters['csv_file'] %&gt;</parameter>
+			<parameter name="attribute_list">&lt;%= @parameters['attribute_list'] %&gt;</parameter>
+            <parameter name="customer_survey_instance_id">&lt;%= @parameters['customer_survey_instance_id'] %&gt;</parameter>
+            <parameter name="survey_template_instance_id">&lt;%= @parameters['survey_template_instance_id'] %&gt;</parameter>
+        </parameters>
+        <fields>
+        </fields>
+    </handler>
+    <results format="xml">
+	    <result name="Status"/>
+		<result name="Error Code"/>
+		<result name="Result Message"/>
+    </results>
+</taskDefinition>

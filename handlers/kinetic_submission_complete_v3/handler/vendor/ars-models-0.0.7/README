@@ -1,0 +1,55 @@
+== MISC
+=== More information
+Roadmap available at http://redmine.kineticdata.com/projects/roadmap/ars-ng-arsmodels
+
+== Ars Models
+The Ars Models Ruby package is a JRuby wrapper implementations of the Kinetic
+Ars Models Java source classes, which simplify Ars interactions by exposing 
+abstracted CRUD methods for common Ars objects.  The Ruby models wrap Java calls
+to implement common Ruby paradigms, such as a method accepting a hash of
+options, and to convert the results from Java to Ruby datatypes.
+
+== Installing Ars Models
+
+=== Requirements
+* Java 1.5+
+* JRuby version 1.1.4+
+* Ars 7.0.1 system libraries
+
+=== Installation
+The Ars Models Ruby package is deployed using SVN.
+
+To checkout the full project, run the following command:
+  $ svn co https://svn9.cvsdude.com/KineticData/arsModels/trunk
+
+To checkout and install the project gem, run the following commands:
+  $ svn co https://svn9.cvsdude.com/KineticData/arsModels/trunk/pkg
+  $ gem uninstall ars-models # Do this only if ars-models is already installed
+  $ gem install pkg/ars-models-$VERSION$.gem
+
+=== Including the Ars Models Library
+If Ars Models was installed as a full source package, the library can be loaded
+by calling 'load' or 'require' on "%PACKAGE_ROOT%/init" or
+"%PACKAGE_ROOT%/lib/ars_models".  For example:
+  require File.expand_path(File.join(File.dirname(__FILE__), '..', 'ArsModels', 'lib', 'ars_models'))
+
+If Ars Models was installed as a gem, the library can be loaded by calling
+'load' or 'require' on "ars_models".  For example:
+  require 'ars_models'
+
+== Getting Started
+# TODO: Getting Started
+
+== Examples
+# TODO: Examples
+
+== Field Types
+# TODO: Field Type documentation
+
+== More Information
+For more information and sample usage, see the rdoc included with the package.
+
+Note: If you installed Ars Models via the gem, the rdoc can be accessed by
+starting a gem server.  To browse the gemmed rdoc, start a local gem server
+using the command below and open a browser to http://127.0.0.1:8080.
+  $ jruby -S gem server -p 8080

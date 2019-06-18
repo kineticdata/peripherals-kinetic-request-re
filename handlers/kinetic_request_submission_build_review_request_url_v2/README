@@ -1,0 +1,56 @@
+== KineticRequest_Submission_BuildReviewRequestUrl
+Builds and returns the URL that corresponds to a review request view of the
+desired Kinetic Request submission.
+
+For more information, see the Detailed Description section below.
+
+=== Requirements
+* Kinetic Task v1.0.2+
+
+This handler requires that the 'Source 2 ID' field on the 'KS_TSK_Relationship'
+form be greater than 55 characters.  Prior to Kinetic Task v1.0.2, this field
+had a limit of 50 characters.  As a workaround, the character limit for this
+field can be expanded to 64 characters.
+
+=== Parameters
+[Submission Id]
+  The instance id of the Kinetic Request submission that will be displayed by
+  the review request.
+[Configuration Type]
+  When set to 'Simple', all review request parameters are defaulted.  When set
+  to 'Advanced', optional review request parameters are exposed.
+
+*Advanced Configuration Parameters*
+The following parameters are only available when the 'Configuration Type'
+parameter is set to "Advanced".
+[Review Page]
+  The path to the desired review request page (which should be set if the review
+  request should use a specific theme).  If this value is blank, the default
+  review request page will be used.
+[Load All Pages]
+  If true, all pages in the request are loaded at once. If false, the contents
+  of the first page will be displayed, and the other content pages will be
+  displayed as tabs.
+[Excluded Pages (Name)]
+  Comma separated list of page names to exclude from the review.
+[Excluded Pages (Number)]
+  Comma separated list of page numbers to exclude from the review (index starts
+  at 1).
+
+==== Sample Configurations
+*Simple Configuration*
+Submission Id::              <%= @results['Retrieve Submission']['id'] %>
+Configuration Type::         Simple
+
+*Advanced Configuration*
+Submission Id::              <%= @results['Retrieve Submission']['id'] %>
+Configuration Type::         Advanced
+Review Page::                themes/CustomTheme/reviewPage.jsp
+Load All Pages::             false
+Excluded Pages (Name)::      2,3,5
+Excluded Pages (Number)::    Private Page 1, Private Page 2
+
+=== Results
+[URL]
+  The URL corresponding to a review request view of the specified Kinetic
+  Request submission.

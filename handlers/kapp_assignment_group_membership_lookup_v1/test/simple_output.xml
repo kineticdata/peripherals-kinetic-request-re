@@ -1,0 +1,4 @@
+<results>
+      <result name="Email List" type="Regexp">.*</result>
+	  <result name="Membership List" type="Regexp">.*</result>
+</results>

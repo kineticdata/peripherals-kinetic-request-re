@@ -1,0 +1,195 @@
+== kinetic_request_submission_base_retrieve
+Retrieves a specific Kinetic Request base record from the KS_SRV_CustomerSurvey_base form. For use inside of subtrees.
+
+=== Parameters
+[Submission ID]
+	the Customer Survey ID or instanceId of the KS_SRV_CustomerSurvey_base form
+
+==== Results
+	Returns a string of xml of the base form name and value pairs.
+	
+==== Sample Configuration
+Submission ID:    KSR000000012345
+
+<results>
+      <result name="CustomerSurveyID">KSR000000012345</result>
+	  <result name="Submitter">Allen</result>
+	  <result name="Create Date">Fri Sep 12 09:34:46 -0500 2014</result>
+	  <result name="Assigned To"></result>
+	  <result name="Last Modified By">Demo</result>
+	  <result name="Modified Date">Fri Sep 12 09:35:48 -0500 2014</result>
+	  <result name="Status">Completed</result>
+	  <result name="Short Description">na</result>
+	  <result name="AssigneeGroup">0;</result>
+	  <result name="Locale"></result>
+	  <result name="instanceId">AG001C29DAE499hgQTVA3dZHAQ7-0A</result>
+	  <result name="_FormID"></result>
+	  <result name="Attribute1">Allen</result>
+	  <result name="Attribute2">Allen</result>
+	  <result name="Attribute3">Allbrook</result>
+	  <result name="Attribute4">Allen</result>
+	  <result name="Attribute5">Allen</result>
+	  <result name="Company Name"></result>
+	  <result name="First Name"></result>
+	 <result name="Last Name"></result>
+	 <result name="Contact ID"></result>
+	 <result name="Company ID"></result>
+	 <result name="_DBValidationStatus"></result>
+	 <result name="_ParentQuestionInstanceID"></result>
+	 <result name="_CheckboxQuestionAnswer"></result>
+	 <result name="_RowParentInstanceID"></result>
+	 <result name="Internal_Notes"></result>
+	 <result name="_ActionOne"></result>
+	 <result name="_ActionTwo"></result>
+	 <result name="_Multi-Purpose"></result>
+	 <result name="_Multi-Purpose2"></result>
+	 <result name="_Multi-Purpose3"></result>
+	 <result name="_Multi-Purpose4"></result>
+	 <result name="_Multi-Purpose5"></result>
+	 <result name="_Multi-Purpose6"></result>
+	 <result name="_Multi-Purpose7"></result>
+	 <result name="_Multi-Purpose-Integer"></result>
+	 <result name="_Multi-Purpose9"></result>
+	 <result name="_Multi-Purpose10"></result>
+	 <result name="_Multi-Purpose12"></result>
+	 <result name="Multi-Purpose Info"></result>
+	 <result name="Form">A SI Template</result>
+	 <result name="OriginatingID">AG001C29DAE499hgQTVA3dZHAQ7-0A</result>
+	 <result name="Category">YourCatalog</result>
+	 <result name="_Send"></result>
+	 <result name="_AuditContext"></result>
+	 <result name="NotesForCustomer"></result>
+	 <result name="Opt Out"></result>
+	 <result name="SurveyInstanceID">KS10ddb4e0904ba41baa0c47749526ba2c7</result>
+	 <result name="Data_Set">YourDataSet</result>
+	 <result name="Survey_Template_Name">A SI Template</result>
+	 <result name="_Status_Int"></result>
+	 <result name="_ActionThree"></result>
+	 <result name="Survey_Method"></result>
+	 <result name="Score">0</result>
+	 <result name="PossibleScore"></result>
+	 <result name="Score_Percentage">0.0</result>
+	 <result name="_ScoreAdd"></result>
+	 <result name="_PossibleScoreAdd"></result>
+	 <result name="_Answers_To_Parse"></result>
+	 <result name="_Answers_Segment"></result>
+	 <result name="_QuestionID"></result>
+	 <result name="_Position"></result>
+	 <result name="SurveySentDate">Fri Sep 12 09:34:46 -0500 2014</result>
+	 <result name="SurveyCompletedDate">Fri Sep 12 09:35:31 -0500 2014</result>
+	 <result name="CustomerSessionInstanceID">AG000C29DAE499hgQTVA3dZHAQ7-0A</result>
+	 <result name="IsAnonymous">Is Anonymous</result>
+	 <result name="IntegrationID"></result>
+	 <result name="IP_CallerID_Value">172.16.37.137</result>
+	 <result name="Attribute6">Allbrook</result>
+	 <result name="Attribute7"></result>
+	 <result name="Attribute8"></result>
+	 <result name="Attribute9"></result>
+	 <result name="Attribute10"></result>
+	 <result name="Attribute11"></result>
+	 <result name="Attribute12"></result>
+	 <result name="Attribute13"></result>
+	 <result name="Attribute14"></result>
+	 <result name="Attribute15"></result>
+	 <result name="Attribute16"></result>
+	 <result name="Attribute17"></result>
+	 <result name="Attribute18"></result>
+	 <result name="Attribute19"></result>
+	 <result name="Attribute20"></result>
+	 <result name="Attribute21"></result>
+	 <result name="Attribute22"></result>
+	 <result name="Attribute23"></result>
+	 <result name="Attribute24"></result>
+	 <result name="Attribute25"></result>
+	 <result name="Attribute26"></result>
+	 <result name="Attribute27"></result>
+	 <result name="Attribute28"></result>
+	 <result name="Attribute29"></result>
+	 <result name="Attribute30"></result>
+	 <result name="Attribute31"></result>
+	 <result name="Attribute32"></result>
+	 <result name="Attribute33"></result>
+	 <result name="Attribute34"></result>
+	 <result name="Attribute35"></result>
+	 <result name="Attribute36"></result>
+	 <result name="Attribute37"></result>
+	 <result name="Attribute38"></result>
+	 <result name="Attribute39"></result>
+	 <result name="Attribute40"></result>
+	 <result name="Attribute41"></result>
+	 <result name="Attribute42"></result>
+	 <result name="Attribute43"></result>
+	 <result name="Attribute44"></result>
+	 <result name="Attribute45"></result>
+	 <result name="Attribute46"></result>
+	 <result name="Attribute47"></result>
+	 <result name="Attribute48"></result>
+	 <result name="Attribute49"></result>
+	 <result name="Attribute50"></result>
+	 <result name="Attribute51"></result>
+	 <result name="Attribute52"></result>
+	 <result name="Attribute53"></result>
+	 <result name="Attribute54"></result>
+	 <result name="Attribute55"></result>
+	 <result name="Attribute56"></result>
+	 <result name="Attribute57"></result>
+	 <result name="Attribute58"></result>
+	 <result name="Attribute59"></result>
+	 <result name="Attribute60"></result>
+	 <result name="Attribute61"></result>
+	 <result name="Attribute62"></result>
+	 <result name="Attribute63"></result>
+	 <result name="Attribute64"></result>
+	 <result name="CategoryInstanceID">KSa64d11248933664cd03f145c200dff9efb</result>
+	 <result name="Message_Template"></result>
+	 <result name="MessageTemplateInstanceID"></result>
+	 <result name="TemplateStatus">New</result>
+	 <result name="_ActionFour"></result>
+	 <result name="IntegrationOperationID"></result>
+	 <result name="PageInstanceId">KS0dbab71942bc2124987af533c75a62b2b</result>
+	 <result name="NextPageInstanceId">KS59167f72a7e42ceca4dca3d437199b78c</result>
+	 <result name="NextCustSurvey_InstanceID"></result>
+	 <result name="ValidationStatus">In Progress</result>
+	 <result name="LookupValueId">AG001C29DAE499hgQTVA3dZHAQ7-0A</result>
+	 <result name="LookupValueIdOrig"></result>
+	 <result name="IsNewPage">false</result>
+	 <result name="Contact_Info_Value"></result>
+	 <result name="Source"></result>
+	 <result name="LastReminderID">0</result>
+	 <result name="Expiration Date"></result>
+	 <result name="_Expiration Days"></result>
+	 <result name="ApplicationName">Kinetic Request</result>
+	 <result name="_ArchiveMe"></result>
+	 <result name="_Answer_MappingFieldID"></result>
+	 <result name="_Answer Viewer Value"></result>
+	 <result name="ng_EndpointSecret"></result>
+	 <result name="ng_ApprovalFieldID"></result>
+	 <result name="ng_ApprovalValue"></result>
+	 <result name="ng_DenialCommentFieldID"></result>
+	 <result name="ng_OrigLookup"></result>
+	 <result name="_UseTaskEngine"></result>
+	 <result name="TaskProcessDescription"></result>
+	 <result name="TaskProcessTree UUID"></result>
+	 <result name="Approval Type"></result>
+	 <result name="ApproverFirstName"></result>
+	 <result name="ApproverLastName"></result>
+	 <result name="ApproverEmailAddress"></result>
+	 <result name="ApproverID"></result>
+	 <result name="ApproverMsgTmplt_IID"></result>
+	 <result name="Approval Category Field"></result>
+	 <result name="Submit Type"></result>
+	 <result name="Request_Closed_Date"></result>
+	 <result name="OriginatingID_Display">KSR000000012345</result>
+	 <result name="Request_Status">Open</result>
+	 <result name="_TaskInstanceId"></result>
+	 <result name="_RunCreateTaskFilters"></result>
+	 <result name="_TriggerStatus"></result>
+	 <result name="Delay_Send"></result>
+	 <result name="Delay_Hours"></result>
+    </results>
+	
+====Detailed Description
+	Retrieves a specific Kinetic Request base record from the KS_SRV_CustomerSurvey_base form. 
+	This is useful for inside subtrees because it allows you, after this handler is run, to have
+	the equivalent of the old @base references available. Note that values here are referenced by
+	their names of the base form, not the "friendly" names defined in the dataset.

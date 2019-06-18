@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ArsModels::Entry</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ArsModels::Entry</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ars_models/entry_rb.html">
+                lib/ars_models/entry.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="BaseWithContext.html">
+                BaseWithContext
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Ruby wrapper class for the java ArsEntry object. Instances of <a
+href="Entry.html">Entry</a> represent a single Ars record.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000039">'[]'</a>&nbsp;&nbsp;
+      <a href="#M000041">'[]='</a>&nbsp;&nbsp;
+      <a href="#M000034">create!</a>&nbsp;&nbsp;
+      <a href="#M000035">delete!</a>&nbsp;&nbsp;
+      <a href="#M000042">delete!</a>&nbsp;&nbsp;
+      <a href="#M000045">field_value_ids</a>&nbsp;&nbsp;
+      <a href="#M000036">find</a>&nbsp;&nbsp;
+      <a href="#M000038">get_field_value</a>&nbsp;&nbsp;
+      <a href="#M000033">new</a>&nbsp;&nbsp;
+      <a href="#M000044">save!</a>&nbsp;&nbsp;
+      <a href="#M000040">set_field_value</a>&nbsp;&nbsp;
+      <a href="#M000046">to_xml</a>&nbsp;&nbsp;
+      <a href="#M000037">update!</a>&nbsp;&nbsp;
+      <a href="#M000043">update_attributes!</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ars_entry</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#ars_entry attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">context</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#context attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">field_values</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#field_values attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">form</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#form attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#id attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">messages</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#messages attribute
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">modified_attributes</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+TODO: Document ArsModels::Entry#modified_attributes attribute
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
+          <span class="method-name">create!</span><span class="method-args">(options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document ArsModels::Entry.create!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 34</span>
+34:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-identifier">options</span>={})
+35:       <span class="ruby-comment cmt"># FIXME: This should not be save! directly</span>
+36:       <span class="ruby-identifier">save!</span>(<span class="ruby-identifier">options</span>)
+37:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">delete!</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Delete Operations</h3>
+<p>
+Delete operates with two different selection approaches:
+</p>
+<p>
+<b>Delete All:</b> This will attempt to delete all the records matching the
+passed conditions and return an array including <a
+href="Entry.html">Entry</a> objects for successfully deleted records and <a
+href="Exceptions/ModelException.html">Exceptions::ModelException</a>
+objects for any records that encountered an error when being deleted.
+</p>
+<p>
+<b>Delete By ID:</b> This can either be a specific id
+(&#8216;000000000000001&#8217;), a list of ids
+(&#8216;000000000000001&#8217;, &#8216;000000000000005&#8217;,
+&#8216;000000000000006&#8217;), or an array of ids
+([&#8216;000000000000001&#8217;, &#8216;000000000000005&#8217;,
+&#8216;000000000000006&#8217;]). If a single id is passed, the single
+deleted matching record will be returned (or an <a
+href="Exceptions/ModelException.html">Exceptions::ModelException</a> will
+be raised if an error was encountered). If multiple ids are passed, an
+array including <a href="Entry.html">Entry</a> objects for successfully
+deleted records and <a
+href="Exceptions/ModelException.html">Exceptions::ModelException</a>
+objects for any records that encountered an error when being deleted will
+be returned.
+</p>
+<h3>Multiple Deletion Results</h3>
+<p>
+Anytime delete is called with the :all operation, or passed multiple IDs to
+delete, additional helper methods are available for the resulting array.
+The <tt>successes</tt> method will return a hash of results index keys
+mapped to the corresponding successfuly deleted entry objects, and the
+<tt>failures</tt> method will return a hash of results index keys mapped to
+the corresponding unsucessfuly entry deletion exceptions.
+</p>
+<h3>Delete Options</h3>
+<h4>Required Delete Options</h4>
+<ul>
+<li><tt>:context</tt> - The <a href="Context.html">Context</a> instance that
+the delete call should be executed as.
+
+</li>
+<li><tt>:form</tt> - The <a href="Form.html">Form</a> instance representing the
+Ars schema the delete call is querying.
+
+</li>
+</ul>
+<h4>Optional Delete Options</h4>
+<ul>
+<li><tt>:conditions</tt> - An ars qualification fragment a format like:
+[&#8217;? = &quot;NEW&quot;&#8217;, 7], [&#8217;? = &quot;NEW&quot;&#8217;,
+:Status], or [&#8217;? = &quot;NEW&quot;&#8217;, &#8216;Status&#8217;],
+where the first entry is the qualification string substituting question
+marks for each of the field identifiers and the remaining array items are
+the field identifiers in order of appearence. As a shortcut, a hash of
+field identifiers to values can be passed in. For example,
+{&quot;Status&quot; =&gt; &quot;New&quot;, &quot;Group Type&quot; =&gt;
+&quot;View&quot;} equates to [&#8217;? = &quot;New&quot; AND ? =
+&quot;View&quot;&#8217;, &quot;Status&quot;, &quot;Group Type&quot;]. If
+any of the values contain a question mark, it should be escaped (IE
+&#8217;\?&#8217; or &quot;\?&quot;). This can be done via
+@string.gsub(/\?/, &#8217;\?&#8217;).
+
+</li>
+<li><tt>:fields</tt> - :all or an array of field identifiers (string for name,
+symbol for label, number for id) indicating which field values should be
+included in the results. Set this parameter to an empty array for more
+efficient deletes that return only the ID of the record. Defaults to :all.
+
+</li>
+</ul>
+<h3>Examples</h3>
+<pre>
+  # Preamble
+  context = Context.new(:username =&gt; 'Demo', :password =&gt; '', :server =&gt; '127.0.0.1', :port =&gt; '0')
+  group_form = Form.find('Group')
+
+  # Delete all non-system groups
+  results = Entry.delete(:all, :context =&gt; context, :form =&gt; group_form, :conditions =&gt; [&quot;? &gt; 7&quot;, 'Group ID'])
+
+  # Display the results
+  puts &quot;Successes: &quot;
+  results.successes.each do {|results_index, entry| puts &quot;  #{entry.id}&quot;}
+  puts &quot;Failures: &quot;
+  results.failures.each do {|results_index, exception| puts &quot;  #{exception.to_s}&quot;}
+
+  # Delete a single group entry (Administrators) by id
+  Entry.delete(000000000000001, :context =&gt; context, :form =&gt; group_form)
+  # Delete multiple group entries (Administrators, Public) by id
+  results = Entry.delete(000000000000001, 000000000000006, :context =&gt; context, :form =&gt; group_form)
+  results = Entry.delete([000000000000001,000000000000006], :context =&gt; context, :form =&gt; group_form)
+
+  # Display the results
+  puts &quot;Successes: &quot;
+  results.successes.each do {|results_index, entry| puts &quot;  #{entry.id}&quot;}
+  puts &quot;Failures: &quot;
+  results.failures.each do {|results_index, exception| puts &quot;  #{exception.to_s}&quot;}
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 117</span>
+117:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">delete!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+118:       <span class="ruby-comment cmt"># TODO: Abstraction - Clean up and document the delete logic chain</span>
+119:       <span class="ruby-comment cmt"># TODO: Feature Completion - Test paged deletions? (ArsModels::Entry.delete)</span>
+120:       <span class="ruby-comment cmt"># TODO: Feature Completion - include_attachments? (ArsModels::Entry.delete)</span>
+121:       <span class="ruby-comment cmt"># TODO: Feature Completion - Messages triggered by deletes</span>
+122: 
+123:       <span class="ruby-comment cmt"># Pop the last argument if it is an options hash</span>
+124:       <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>.<span class="ruby-identifier">clone</span> <span class="ruby-operator">:</span> {}
+125: 
+126:       <span class="ruby-comment cmt"># Default the context if this class was created with a context instance</span>
+127:       <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">context</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>
+128: 
+129:       <span class="ruby-comment cmt"># Validate that the options are valid</span>
+130:       <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+131:         <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:form</span>],
+132:         <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:conditions</span>, <span class="ruby-identifier">:fields</span>]
+133:       )
+134: 
+135:       <span class="ruby-comment cmt"># Build the array of requested field ids</span>
+136:       <span class="ruby-identifier">field_ids</span> = <span class="ruby-identifier">build_field_ids</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:fields</span>), <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+137: 
+138:       <span class="ruby-comment cmt"># Call the appropriate find method</span>
+139:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:all</span>
+140:         <span class="ruby-comment cmt"># Build the qualification information</span>
+141:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>] = <span class="ruby-identifier">build_qualification</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:conditions</span>), <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+142: 
+143:         <span class="ruby-comment cmt"># Make the JAPI models call to find all of the matching results</span>
+144:         <span class="ruby-identifier">ars_find_results</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">findAll</span>(
+145:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+146:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+147:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>],
+148:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-identifier">:Long</span>),
+149:           <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-identifier">:Long</span>)
+150:         )
+151: 
+152:         <span class="ruby-comment cmt"># Declare the requried result objects</span>
+153:         <span class="ruby-identifier">results</span>, <span class="ruby-identifier">successes</span>, <span class="ruby-identifier">failures</span> = [], {}, {}
+154: 
+155:         <span class="ruby-comment cmt"># Collect the results, converting them to Entry or Exception objects</span>
+156:         <span class="ruby-identifier">ars_find_results</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ars_result</span><span class="ruby-operator">|</span>
+157:           <span class="ruby-keyword kw">begin</span>
+158:             <span class="ruby-comment cmt"># Call the japi delete method</span>
+159:             <span class="ruby-identifier">ars_result</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>)
+160:             <span class="ruby-comment cmt"># Build a new Entry from the japi object</span>
+161:             <span class="ruby-identifier">result</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">ars_result</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+162:             <span class="ruby-comment cmt"># Add it to the successes hash</span>
+163:             <span class="ruby-identifier">successes</span>[<span class="ruby-identifier">results</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">result</span>
+164:             <span class="ruby-comment cmt"># Add it to the results array</span>
+165:             <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span>
+166:           <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+167:             <span class="ruby-comment cmt"># Process the exception</span>
+168:             <span class="ruby-identifier">exception</span> = <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">InternalError</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">exception</span>)
+169:             <span class="ruby-comment cmt"># Add the exception to the failures hash</span>
+170:             <span class="ruby-identifier">failures</span>[<span class="ruby-identifier">results</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">exception</span>
+171:             <span class="ruby-comment cmt"># Add the exception to the results array</span>
+172:             <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">exception</span>
+173:           <span class="ruby-keyword kw">end</span>
+174:         <span class="ruby-keyword kw">end</span>
+175:         
+176:         <span class="ruby-comment cmt"># Add the successes method to the results array</span>
+177:         <span class="ruby-identifier">results_metaclass</span> = <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">results</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>
+178:         <span class="ruby-identifier">results_metaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+179:           <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:successes</span>) {<span class="ruby-identifier">successes</span>}
+180:           <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:failures</span>) {<span class="ruby-identifier">failures</span>}
+181:         <span class="ruby-keyword kw">end</span>
+182: 
+183:         <span class="ruby-comment cmt"># Return the results</span>
+184:         <span class="ruby-identifier">results</span>
+185:       <span class="ruby-comment cmt"># If this is no an :all, :first, :last, :rand, or :single search</span>
+186:       <span class="ruby-keyword kw">else</span>
+187:         <span class="ruby-comment cmt"># Build the list of ids</span>
+188:         <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ArsModels</span><span class="ruby-operator">::</span><span class="ruby-constant">Entry</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">record</span>}
+189: 
+190:         <span class="ruby-comment cmt"># If there were no entries, return an empty array</span>
+191:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+192:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Missing arguments specifying records to delete.'</span>)
+193:         <span class="ruby-comment cmt"># If there was one entry, try to delete it</span>
+194:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Array</span>)
+195:           <span class="ruby-keyword kw">begin</span>
+196:             <span class="ruby-comment cmt"># Call the japi delete method</span>
+197:             <span class="ruby-identifier">ars_result</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">delete</span>(
+198:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+199:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+200:               <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">first</span>,
+201:               <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span><span class="ruby-value str">'Long'</span>)
+202:             )
+203:             <span class="ruby-comment cmt"># Build a new Entry from the japi object</span>
+204:             <span class="ruby-identifier">result</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">ars_result</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+205:           <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+206:             <span class="ruby-comment cmt"># Process the exception</span>
+207:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">InternalError</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">exception</span>)
+208:           <span class="ruby-keyword kw">end</span>
+209:         <span class="ruby-comment cmt"># If multiple entries were deleted</span>
+210:         <span class="ruby-keyword kw">else</span>
+211:           <span class="ruby-comment cmt"># Declare the requried result objects</span>
+212:           <span class="ruby-identifier">results</span>, <span class="ruby-identifier">successes</span>, <span class="ruby-identifier">failures</span> = [], {}, {}
+213: 
+214:           <span class="ruby-comment cmt"># Collect the results, converting them to Entry or Exception objects</span>
+215:           <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+216:             <span class="ruby-keyword kw">begin</span>
+217:               <span class="ruby-comment cmt"># Call the japi delete method</span>
+218:               <span class="ruby-identifier">ars_result</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">delete</span>(
+219:                 <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+220:                 <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+221:                 <span class="ruby-identifier">id</span>,
+222:                 <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">field_ids</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span><span class="ruby-value str">'Long'</span>)
+223:               )
+224:               <span class="ruby-comment cmt"># Build a new Entry from the japi object</span>
+225:               <span class="ruby-identifier">result</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">ars_result</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+226:               <span class="ruby-comment cmt"># Add it to the successes hash</span>
+227:               <span class="ruby-identifier">successes</span>[<span class="ruby-identifier">results</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">result</span>
+228:               <span class="ruby-comment cmt"># Add it to the results array</span>
+229:               <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span>
+230:             <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+231:               <span class="ruby-comment cmt"># Process the exception</span>
+232:               <span class="ruby-identifier">exception</span> = <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">InternalError</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">exception</span>)
+233:               <span class="ruby-comment cmt"># Add the exception to the failures hash</span>
+234:               <span class="ruby-identifier">failures</span>[<span class="ruby-identifier">results</span>.<span class="ruby-identifier">length</span>] = <span class="ruby-identifier">exception</span>
+235:               <span class="ruby-comment cmt"># Add the exception to the results array</span>
+236:               <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">exception</span>
+237:             <span class="ruby-keyword kw">end</span>
+238:           <span class="ruby-keyword kw">end</span>
+239: 
+240:           <span class="ruby-comment cmt"># Add the successes method to the results array</span>
+241:           <span class="ruby-identifier">results_metaclass</span> = <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">results</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>
+242:           <span class="ruby-identifier">results_metaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+243:             <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:successes</span>) {<span class="ruby-identifier">successes</span>}
+244:             <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:failures</span>) {<span class="ruby-identifier">failures</span>}
+245:           <span class="ruby-keyword kw">end</span>
+246: 
+247:           <span class="ruby-comment cmt"># Return the results</span>
+248:           <span class="ruby-identifier">results</span>
+249:         <span class="ruby-keyword kw">end</span>
+250:       <span class="ruby-keyword kw">end</span>
+251:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">find</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Find Operations</h3>
+<p>
+Find operates with four different retrieval approaches:
+</p>
+<p>
+<b>Find All:</b> This will return all the records matched by the options
+used. If no records are found, an empty array is returned.
+</p>
+<p>
+<b>Find By ID:</b> This can either be a specific id
+(&#8216;000000000000001&#8217;), a list of ids
+(&#8216;000000000000001&#8217;, &#8216;000000000000005&#8217;,
+&#8216;000000000000006&#8217;), or an array of ids
+([&#8216;000000000000001&#8217;, &#8216;000000000000005&#8217;,
+&#8216;000000000000006&#8217;]). If a single id is passed, the single
+matched record will be returned, or <tt>nil</tt> if it is not found. If
+multiple ids are passed, an array of records will be returned. <a
+href="Entry.html">Entry</a> ids not found will result in a nil object.
+</p>
+<p>
+<b>Find By Position:</b> There are three options for finding an entry by
+position.
+</p>
+<ul>
+<li><tt>:first</tt> - Returns the first record matched by the options used. If
+no records are matched, <tt>nil</tt> is returned.
+
+</li>
+<li><tt>:last</tt> - Returns the last record matched by the options used. If no
+records are matched, <tt>nil</tt> is returned.
+
+</li>
+<li><tt>:rand</tt> - Returns a random record that matches the options used. If
+no records are matched, <tt>nil</tt> is returned.
+
+</li>
+</ul>
+<p>
+<b>Find Single:</b> This will return a single record matched by the options
+used. If a matching record is not found, <tt>nil</tt> is returned. If more
+than one record is found an exception is raised. Find single is most
+frequently used to retrieve a record by GUID or other non-id unique
+identifier.
+</p>
+<h3>Find Options</h3>
+<h4>Required Find Options</h4>
+<ul>
+<li><tt>:context</tt> - The <a href="Context.html">Context</a> instance that
+the <a href="Entry.html#M000036">find</a> call should be executed as.
+
+</li>
+<li><tt>:form</tt> - The <a href="Form.html">Form</a> instance representing the
+Ars schema the <a href="Entry.html#M000036">find</a> call is querying.
+
+</li>
+</ul>
+<h4>Optional Find Options</h4>
+<ul>
+<li><tt>:conditions</tt> - An ars qualification fragment a format like:
+[&#8217;? = &quot;NEW&quot;&#8217;, 7], [&#8217;? = &quot;NEW&quot;&#8217;,
+:Status], or [&#8217;? = &quot;NEW&quot;&#8217;, &#8216;Status&#8217;],
+where the first entry is the qualification string substituting question
+marks for each of the field identifiers and the remaining array items are
+the field identifiers in order of appearence. As a shortcut, a hash of
+field identifiers to values can be passed in. For example,
+{&quot;Status&quot; =&gt; &quot;New&quot;, &quot;Group Type&quot; =&gt;
+&quot;View&quot;} equates to [&#8217;? = &quot;New&quot; AND ? =
+&quot;View&quot;&#8217;, &quot;Status&quot;, &quot;Group Type&quot;]. If
+any of the values contain a question mark, it should be escaped (IE
+&#8217;\?&#8217; or &quot;\?&quot;). This can be done via
+@string.gsub(/\?/, &#8217;\?&#8217;).
+
+</li>
+<li><tt>:fields</tt> - :all or an array of field identifiers (string for name,
+symbol for label, number for id) indicating which field values should be
+included in the results. Defaults to :all.
+
+</li>
+<li><tt>:limit</tt> - A number representing the maximum number of entries
+returned. This defaults to the max entry list size set for Remedy.
+
+</li>
+<li><tt>:order</tt> - An array of field identifiers (string for name, symbol
+for label, number for id) indicating the sort order from most to least
+significant. To reverse the sort order for a field, replace the identifier
+with a single element hash that contains the field identifier as the key,
+and :desc, &#8216;desc&#8217;, or &#8216;DESC&#8217; as the value.
+Numerical field identifiers can be set to reverse sorting by using their
+negative. Defaults to the <a href="Form.html">Form</a>&#8216;s default sort
+order.
+
+</li>
+<li><tt>:page</tt> - Used when finding all or finding by position, +:page+
+indicates the page number, indexed starting at 1, to restrict the search
+to.
+
+</li>
+</ul>
+<h3>Pagination</h3>
+<p>
+When the <a href="Entry.html#M000036">find</a> all operation is used, the
+resulting array is patched to include pagination meta-data. The following
+method calls are available for the resulting array:
+</p>
+<ul>
+<li><tt>:total_entries</tt> - The total number of matching results.
+
+</li>
+<li><tt>:total_pages</tt> - The total number of pages containing matching
+results.
+
+</li>
+<li><tt>:current_page</tt> - The current page number, indexed starting at 1,
+for the results.
+
+</li>
+<li><tt>:previous_page</tt> - The previous page number, indexed starting at 1,
+for the results. If the current page is also the first, this will return
+<tt>nil</tt>.
+
+</li>
+<li><tt>:next_page</tt> - The next page number, indexed starting at 1, for the
+results. If the current page is also the last, this will return
+<tt>nil</tt>.
+
+</li>
+</ul>
+<h3>Examples</h3>
+<pre>
+  # Preamble
+  context = Context.new(:username =&gt; 'Demo', :password =&gt; '', :server =&gt; '127.0.0.1', :port =&gt; '0')
+  group_form = Form.find('Group')
+
+  # Find all system groups
+  Entry.find(:all, :context =&gt; context, :form =&gt; group_form, :conditions =&gt; [&quot;? &lt;= 7&quot;, 'Group ID'])
+
+  # Find single group entry (Administrators) by id
+  Entry.find(000000000000001, :context =&gt; context, :form =&gt; group_form)
+  # Find multiple group entries (Administrators, Public) by id
+  Entry.find(000000000000001, 000000000000006, :context =&gt; context, :form =&gt; group_form)
+  Entry.find([000000000000001,000000000000006], :context =&gt; context, :form =&gt; group_form)
+
+  # Find the first group alphabetically
+  Entry.find(:first, :context =&gt; context, :form =&gt; group_form, :order =&gt; ['Group Name'])
+  # Find the most recently created group
+  Entry.find(:last, :context =&gt; context, :form =&gt; group_form, :order =&gt; ['Create Date'])
+  # Find a random group
+  Entry.find(:rand, :context =&gt; context, :form =&gt; group_form)
+
+  # Find single group entry with the provided unique identifier
+  Entry.find(:single, :context =&gt; context, :form =&gt; group_form, :conditions =&gt; {'Unique Identifier' =&gt; &quot;AG0c29df58dc1rCgRQAGMuAAY_zD&quot;})
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 358</span>
+358:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+359:       <span class="ruby-comment cmt"># TODO: Abstraction - Clean up and document the find logic chain</span>
+360:       <span class="ruby-comment cmt"># TODO: Feature Completion - Test paged deletions? (ArsModels::Entry.find)</span>
+361:       <span class="ruby-comment cmt"># TODO: Feature Completion - include_attachments? (ArsModels::Entry.find)</span>
+362: 
+363:       <span class="ruby-keyword kw">begin</span>
+364:         <span class="ruby-comment cmt"># Pop the last argument if it is an options hash</span>
+365:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>.<span class="ruby-identifier">clone</span> <span class="ruby-operator">:</span> {}
+366: 
+367:         <span class="ruby-comment cmt"># Default the context if this class was created with a context instance</span>
+368:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">context</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>
+369:         
+370:         <span class="ruby-comment cmt"># Validate that the options are valid</span>
+371:         <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+372:           <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:form</span>],
+373:           <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [
+374:             <span class="ruby-identifier">:conditions</span>,
+375:             <span class="ruby-identifier">:field_ids</span>,
+376:             <span class="ruby-identifier">:fields</span>,
+377:             <span class="ruby-identifier">:include_attachments</span>,
+378:             <span class="ruby-identifier">:limit</span>,
+379:             <span class="ruby-identifier">:order</span>,
+380:             <span class="ruby-identifier">:page</span>
+381:           ]
+382:         )
+383: 
+384:         <span class="ruby-comment cmt"># Default shared options</span>
+385:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:include_attachments</span>] <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">false</span>
+386: 
+387:         <span class="ruby-comment cmt"># Build the array of requested field ids</span>
+388:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>] = <span class="ruby-identifier">build_field_ids</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:fields</span>), <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+389: 
+390:         <span class="ruby-comment cmt"># Call the appropriate find method</span>
+391:         <span class="ruby-keyword kw">if</span> [<span class="ruby-identifier">:all</span>, <span class="ruby-identifier">:first</span>, <span class="ruby-identifier">:last</span>, <span class="ruby-identifier">:rand</span>, <span class="ruby-identifier">:single</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>)
+392:           <span class="ruby-comment cmt"># Default order</span>
+393:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>] = <span class="ruby-identifier">build_field_ids</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:order</span>), <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>]) <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">sort_field_ids</span>
+394: 
+395:           <span class="ruby-comment cmt"># Build the qualification information</span>
+396:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>] = <span class="ruby-identifier">build_qualification</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:conditions</span>), <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+397: 
+398:           <span class="ruby-comment cmt"># Call the corresponding find</span>
+399:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+400:           <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:all</span> <span class="ruby-keyword kw">then</span>
+401:             <span class="ruby-comment cmt"># Validate the options</span>
+402:             <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+403:               <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [
+404:                 <span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:form</span>, <span class="ruby-identifier">:field_ids</span>, <span class="ruby-identifier">:include_attachments</span>, <span class="ruby-identifier">:qualification</span>, <span class="ruby-identifier">:qualification_field_ids</span>
+405:               ],
+406:               <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:limit</span>, <span class="ruby-identifier">:order</span>, <span class="ruby-identifier">:page</span>]
+407:             )
+408: 
+409:             <span class="ruby-comment cmt"># Compute the chunk index (which is indexed by 0, where :page is indexed by 1)</span>
+410:             <span class="ruby-identifier">chunk_index</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:page</span>] <span class="ruby-operator">?</span> (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:page</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+411: 
+412:             <span class="ruby-comment cmt"># Get the JAPI results</span>
+413:             <span class="ruby-identifier">find_result</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">findAllWithCount</span>(
+414:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+415:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+416:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>],
+417:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+418:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+419:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+420:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:limit</span>],
+421:               <span class="ruby-identifier">chunk_index</span>,
+422:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:include_attachments</span>]
+423:             )
+424: 
+425:             <span class="ruby-comment cmt"># Parse the results to get the entries and the count</span>
+426:             <span class="ruby-identifier">ars_entries</span> = <span class="ruby-identifier">find_result</span>[<span class="ruby-value">0</span>]
+427:             <span class="ruby-identifier">count</span> = <span class="ruby-identifier">find_result</span>[<span class="ruby-value">1</span>]
+428: 
+429:             <span class="ruby-comment cmt"># Convert the JAPI entries into ArsModels entries</span>
+430:             <span class="ruby-identifier">result</span> = <span class="ruby-identifier">ars_entries</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ars_entry</span><span class="ruby-operator">|</span>
+431:               <span class="ruby-identifier">new</span>(<span class="ruby-identifier">ars_entry</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+432:             <span class="ruby-keyword kw">end</span>
+433: 
+434:             <span class="ruby-comment cmt"># TODO: Abstraction - Convert this to an include / extend module call so that the results array can be checked via is_a?(ArsModels::Pagination)</span>
+435:             <span class="ruby-comment cmt"># Add the pagination helper methods</span>
+436:             <span class="ruby-identifier">result_metaclass</span> = <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>
+437:             <span class="ruby-identifier">result_metaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+438:               <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:total_entries</span>) {<span class="ruby-identifier">count</span>}
+439:               <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:total_pages</span>)   {<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:limit</span>] <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:limit</span>]).<span class="ruby-identifier">ceil</span>}
+440:               <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:current_page</span>)  {<span class="ruby-identifier">chunk_index</span>}
+441:               <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:previous_page</span>) {<span class="ruby-identifier">chunk_index</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">chunk_index</span>}
+442:               <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">:next_page</span>)     {<span class="ruby-identifier">chunk_index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">total_pages</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">chunk_index</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>}
+443:             <span class="ruby-keyword kw">end</span>
+444: 
+445:             <span class="ruby-comment cmt"># Return the result set</span>
+446:             <span class="ruby-identifier">result</span>
+447:           <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:first</span>, <span class="ruby-identifier">:last</span> <span class="ruby-keyword kw">then</span>
+448:             <span class="ruby-comment cmt"># TODO: Feature Completion - Implement first/last for paging (ArsModels::Entry.find)</span>
+449: 
+450:             <span class="ruby-comment cmt"># Validate the options</span>
+451:             <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+452:               <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:form</span>],
+453:               <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:field_ids</span>, <span class="ruby-identifier">:include_attachments</span>, <span class="ruby-identifier">:order</span>, <span class="ruby-identifier">:qualification</span>, <span class="ruby-identifier">:qualification_field_ids</span>]
+454:             )
+455: 
+456:             <span class="ruby-comment cmt"># Reverse the order if looking for the last</span>
+457:             <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>].<span class="ruby-identifier">collect!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">id</span>} <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:last</span>
+458: 
+459:             <span class="ruby-comment cmt"># Make the JAPI models call</span>
+460:             <span class="ruby-identifier">entries</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">find_all</span>(
+461:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+462:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+463:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>],
+464:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+465:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+466:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+467:               <span class="ruby-value">1</span> <span class="ruby-comment cmt"># Set the limit to 1</span>
+468:             ).<span class="ruby-identifier">to_a</span>
+469: 
+470:             <span class="ruby-comment cmt"># Generate the result</span>
+471:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">length</span>
+472:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+473:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">new</span>(<span class="ruby-identifier">entries</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+474:               <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-value str">'Multiple entries returned for find by position call.'</span>
+475:             <span class="ruby-keyword kw">end</span>
+476:           <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:rand</span> <span class="ruby-keyword kw">then</span>
+477:             <span class="ruby-comment cmt"># TODO: Feature Completion - ArsModels::Entry.find(:rand)</span>
+478:             <span class="ruby-identifier">raise</span> <span class="ruby-value str">'Not Implemented'</span>
+479:           <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:single</span> <span class="ruby-keyword kw">then</span>
+480:             <span class="ruby-comment cmt"># Validate the options</span>
+481:             <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+482:               <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:form</span>],
+483:               <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [
+484:                 <span class="ruby-identifier">:field_ids</span>, <span class="ruby-identifier">:include_attachments</span>, <span class="ruby-identifier">:order</span>, <span class="ruby-identifier">:qualification</span>, <span class="ruby-identifier">:qualification_field_ids</span>
+485:               ]
+486:             )
+487: 
+488:             <span class="ruby-comment cmt"># Get the JAPI results</span>
+489:             <span class="ruby-identifier">find_results</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">find_all</span>(
+490:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+491:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+492:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification</span>],
+493:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:qualification_field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>),
+494:               <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>)
+495:             )
+496: 
+497:             <span class="ruby-comment cmt"># Generate the result</span>
+498:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">find_results</span>.<span class="ruby-identifier">length</span>
+499:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+500:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">new</span>(<span class="ruby-identifier">find_results</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>])
+501:               <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;More than one result found by 'single' search&quot;</span>
+502:             <span class="ruby-keyword kw">end</span>
+503:           <span class="ruby-keyword kw">end</span>
+504:         <span class="ruby-comment cmt"># If this is no an :all, :first, :last, :rand, or :single search</span>
+505:         <span class="ruby-keyword kw">else</span>
+506:           <span class="ruby-comment cmt"># Validate the options</span>
+507:           <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>,
+508:             <span class="ruby-identifier">:required</span> =<span class="ruby-operator">&gt;</span> [
+509:               <span class="ruby-identifier">:context</span>,
+510:               <span class="ruby-identifier">:form</span>,
+511:               <span class="ruby-identifier">:field_ids</span>,
+512:               <span class="ruby-identifier">:include_attachments</span>
+513:             ]
+514:           )
+515: 
+516:           <span class="ruby-comment cmt"># Convert the list of arguments to an array of Java Strings</span>
+517:           <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-identifier">:string</span>)
+518: 
+519:           <span class="ruby-comment cmt"># Get the JAPI results</span>
+520:           <span class="ruby-identifier">find_results</span> = <span class="ruby-constant">ArsEntry</span>.<span class="ruby-identifier">find_all</span>(
+521:             <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>].<span class="ruby-identifier">ars_context</span>,
+522:             <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">ars_form</span>,
+523:             <span class="ruby-identifier">ids</span>,
+524:             <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:field_ids</span>].<span class="ruby-identifier">to_java</span>(<span class="ruby-value str">'Long'</span>)
+525:           )
+526: 
+527:           <span class="ruby-comment cmt"># Convert the JAPI entries into ArsModels entries</span>
+528:           <span class="ruby-identifier">results</span> = <span class="ruby-identifier">find_results</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ars_entry</span><span class="ruby-operator">|</span>
+529:             <span class="ruby-identifier">ars_entry</span> <span class="ruby-value">? </span><span class="ruby-identifier">new</span>(<span class="ruby-identifier">ars_entry</span>, <span class="ruby-identifier">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:context</span>], <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>]) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+530:           <span class="ruby-keyword kw">end</span>
+531: 
+532:           <span class="ruby-comment cmt"># If there was only one entry requested, return the single result,</span>
+533:           <span class="ruby-comment cmt"># otherwise return the result array</span>
+534:           <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">find_results</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">results</span>
+535:         <span class="ruby-keyword kw">end</span>
+536:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NativeException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+537:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">ModelException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">exception</span>.<span class="ruby-identifier">cause</span>)
+538:       <span class="ruby-keyword kw">end</span>
+539:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <a href="#M000033" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a href="Entry.html">ArsModels::Entry</a> initializer
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 25</span>
+25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+26:       <span class="ruby-keyword kw">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+27:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">update!</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document ArsModels::Entry.update!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 542</span>
+542:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+543:       <span class="ruby-comment cmt"># FIXME: This should probably not be save! directly</span>
+544:       <span class="ruby-comment cmt"># TODO: Enhancement - Implement update!(:single)</span>
+545:       <span class="ruby-identifier">save!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+546:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <span class="method-name">'[]'</span><span class="method-args">(attribute)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Entry.html#M000038">get_field_value</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <span class="method-name">'[]='</span><span class="method-args">(attribute, value)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Entry.html#M000040">set_field_value</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="#M000042" class="method-signature">
+          <span class="method-name">delete!</span><span class="method-args">(options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a href="Form.html#M000051">ArsModels::Form#delete</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 580</span>
+580:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete!</span>(<span class="ruby-identifier">options</span>={})
+581:       <span class="ruby-comment cmt"># Check for bad options</span>
+582:       <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:fields</span>])
+583: 
+584:       <span class="ruby-comment cmt"># Define the default options</span>
+585:       <span class="ruby-identifier">default_options</span> = {}
+586:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:context</span>] = <span class="ruby-identifier">context</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>
+587:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:form</span>] = <span class="ruby-identifier">form</span>
+588:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:fields</span>] = <span class="ruby-identifier">field_value_ids</span>
+589: 
+590:       <span class="ruby-comment cmt"># Delete this instance</span>
+591:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">delete!</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>))
+592:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="#M000045" class="method-signature">
+          <span class="method-name">field_value_ids</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document ArsModels::Form#field_value_ids
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 628</span>
+628:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">field_value_ids</span>
+629:       <span class="ruby-ivar">@ars_entry</span>.<span class="ruby-identifier">field_value_ids</span>.<span class="ruby-identifier">to_a</span>
+630:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">get_field_value</span><span class="method-args">(attribute)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a
+href="Entry.html#M000038">ArsModels::Entry#get_field_value</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 553</span>
+553:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_field_value</span>(<span class="ruby-identifier">attribute</span>)
+554:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">'Unable to process field value without form definition'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">form</span>
+555:       <span class="ruby-identifier">field</span> = <span class="ruby-identifier">form</span>.<span class="ruby-identifier">field_for</span>(<span class="ruby-identifier">attribute</span>)
+556:       <span class="ruby-identifier">field_id</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span>
+557:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Unable to retrieve field id for key '#{attribute.inspect}' (#{attribute.class.name}).&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">field_id</span>
+558:       <span class="ruby-keyword kw">begin</span>
+559:         <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@ars_entry</span>.<span class="ruby-identifier">get_field_value</span>(<span class="ruby-identifier">field_id</span>)
+560:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span>
+561:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">InternalError</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">error</span>)
+562:       <span class="ruby-keyword kw">end</span>
+563:       <span class="ruby-constant">FieldValue</span>.<span class="ruby-identifier">to_ruby</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">:field_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">field_id</span>, <span class="ruby-identifier">:form</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">form</span>, <span class="ruby-identifier">:entry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+564:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="#M000044" class="method-signature">
+          <span class="method-name">save!</span><span class="method-args">(options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a href="Form.html#M000064">ArsModels::Form#save</a>!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000044-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 610</span>
+610:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save!</span>(<span class="ruby-identifier">options</span>={})
+611:       <span class="ruby-comment cmt"># Check for bad options</span>
+612:       <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:field_values</span>, <span class="ruby-identifier">:fields</span>, <span class="ruby-identifier">:field_ids</span>, <span class="ruby-identifier">:form</span>])
+613: 
+614:       <span class="ruby-comment cmt"># Raise an exception if the form specified is not the correct form</span>
+615:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Conflicting forms&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">form</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">form</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:form</span>].<span class="ruby-identifier">name</span>
+616: 
+617:       <span class="ruby-comment cmt"># Define the default options</span>
+618:       <span class="ruby-identifier">default_options</span> = {}
+619:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:context</span>] = <span class="ruby-identifier">context</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>
+620:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:form</span>] = <span class="ruby-identifier">form</span>
+621:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:fields</span>] = <span class="ruby-identifier">field_value_ids</span>
+622: 
+623:       <span class="ruby-comment cmt"># Delete this instance</span>
+624:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">save!</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>))
+625:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">set_field_value</span><span class="method-args">(attribute, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a
+href="Entry.html#M000040">ArsModels::Entry#set_field_value</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 568</span>
+568:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_field_value</span>(<span class="ruby-identifier">attribute</span>, <span class="ruby-identifier">value</span>)
+569:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">'Unable to process field value without form definition'</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">form</span>
+570:       <span class="ruby-identifier">field</span> = <span class="ruby-identifier">form</span>.<span class="ruby-identifier">field_for</span>(<span class="ruby-identifier">attribute</span>)
+571:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Unable to retrieve field id for key '#{attribute.inspect}' (#{attribute.class.name}).&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span>
+572:       <span class="ruby-identifier">new_value</span> = <span class="ruby-constant">FieldValue</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-identifier">field</span>, <span class="ruby-identifier">value</span>, <span class="ruby-ivar">@ars_entry</span>.<span class="ruby-identifier">get_field_value</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span>))
+573:       <span class="ruby-ivar">@ars_entry</span>.<span class="ruby-identifier">set_field_value</span>(<span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">new_value</span>)
+574:       <span class="ruby-ivar">@modified_attributes</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-ivar">@modified_attributes</span> = {<span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span>} <span class="ruby-operator">:</span> <span class="ruby-ivar">@modified_attributes</span>[<span class="ruby-identifier">field</span>.<span class="ruby-identifier">id</span>] = <span class="ruby-identifier">value</span>
+575:       <span class="ruby-keyword kw">self</span>
+576:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="#M000046" class="method-signature">
+          <span class="method-name">to_xml</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document <a href="Form.html#M000070">ArsModels::Form#to_xml</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 657</span>
+657:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_xml</span>
+658:       <span class="ruby-comment cmt"># Call the java method</span>
+659:       <span class="ruby-ivar">@ars_entry</span>.<span class="ruby-identifier">to_xml_string</span>
+660:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="#M000043" class="method-signature">
+          <span class="method-name">update_attributes!</span><span class="method-args">(attributes, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO: Document ArsModels::Form#update_attributes!
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000043-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/ars_models/entry.rb, line 595</span>
+595:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_attributes!</span>(<span class="ruby-identifier">attributes</span>, <span class="ruby-identifier">options</span>={})
+596:       <span class="ruby-comment cmt"># Check for bad options</span>
+597:       <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">:context</span>, <span class="ruby-identifier">:fields</span>])
+598: 
+599:       <span class="ruby-comment cmt"># Define the default options</span>
+600:       <span class="ruby-identifier">default_options</span> = {}
+601:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:context</span>] = <span class="ruby-identifier">context</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>
+602:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:form</span>] = <span class="ruby-identifier">form</span>
+603:       <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">:fields</span>] = <span class="ruby-identifier">field_value_ids</span>
+604: 
+605:       <span class="ruby-comment cmt"># Save the update</span>
+606:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">save!</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:field_values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">attributes</span>))
+607:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

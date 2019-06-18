@@ -1,0 +1,23 @@
+== kinetic_assignment_record_update
+Retrieves a specific record from the KS_SRV_Helper form.
+
+
+=== Parameters
+[Work Order ID]
+
+
+==== Results
+
+[DueDate]
+[AssignedIndividualID]
+[Company]
+[AssignedGroupID]
+[Organization]
+[AssignedGroupName]
+[SourceID]
+[SourceGUID]
+[SystemSourceName]
+[Name]
+[instanceId]
+[SLA Goal Hours]
+[SLA Goal Calculated Seconds]

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_format_answers_html" name="Kinetic Request Submission Format Answers HTML" schema_version="1.0" version="5">
+    <author>support@kineticdata.com</author>
+    <description>Builds a simple result string by formatting a specified subset of answers for the source Kinetic Request submission.</description>
+    <helpurl>http://community.kineticdata.com/20_Kinetic_Task/Task_Handlers/</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="start" label="Starting Question:" required="false"
+            tooltip="The question name of the first question that should be formatted.  If this is left blank, the first question on the service item will be used."/>
+        <parameter id="end" label="Ending Question:" required="false"
+            tooltip="The question name of the last question that should be formatted.  If this is left blank, the last question on the service item will be used."/>
+        <parameter id="include" label="Included Questions:" required="false"
+            tooltip="A comma separated list of question names that should be explicitely included in the question list.  Questions included in this list will be included even if they do not exist between the starting and ending questions.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+        <parameter id="exclude" label="Excluded Questions:" required="false"
+            tooltip="A comma separated list of question names that should be explicitely excluded in the question list.  Questions included in this list will be excluded even if they exist between the starting and ending questions or are included in the 'Included Question' parameter.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+		<parameter id="csrvId" label="Survey/Request Instance ID:" required="true"
+            tooltip="Instance ID of the survey/request to retrieve answers for"/>
+		<parameter id="link" label="Include Review Link:" required="false"
+            tooltip="Yes/No: Whether or not a review link should be included below the table"/>
+		<parameter id="template" label="Include Template Name:" required="false"
+            tooltip="Yes/No: Whether or not the name of the template should be included above the table as a header"/>
+		<parameter id="webServer" label="Default Web Server:" required="true"
+            tooltip="Default Web Server"/>
+		<parameter id="h_table_structure" label="Heading table structure:" required="false"
+			tooltip="header table structure"></parameter>
+		<parameter id="q_table_wrapper_open" label="Question table tag open:" required="false"
+			tooltip="opening table tag and styling">&lt;table&gt;</parameter>
+		<parameter id="q_tbody_wrapper_open" label="Question table tbody tag open:" required="false"
+			tooltip="opening table tag and styling">&lt;tbody&gt;</parameter>
+		<parameter id="q_tr_wrapper_open" label="Question table tr tag open:" required="false"
+			tooltip="opening tr tag and styling">&lt;tr&gt;</parameter>
+		<parameter id="q_td_qlabel_wrapper_open" label="Question table label td tag open:" required="false"
+			tooltip="opening question label td tag and styling">&lt;td&gt;</parameter>
+		<parameter id="q_td_qlabel_wrapper_close" label="Question table label td tag close:" required="false"
+			tooltip="closing question label td tag">&lt;/td&gt;</parameter>
+		<parameter id="q_td_qanswer_wrapper_open" label="Question table answer td tag open:" required="false"
+			tooltip="opening question answer td tag and styling">&lt;td&gt;</parameter>
+		<parameter id="q_td_qanswer_wrapper_close" label="Question table answer td tag close:" required="false"
+			tooltip="closing question answer td tag">&lt;/td&gt;</parameter>
+		<parameter id="q_tr_wrapper_close" label="Question table tr tag close:" required="false"
+			tooltip="closing tr tag">&lt;/tr&gt;</parameter>
+		<parameter id="q_tbody_wrapper_close" label="Question table tbody tag close:" required="false"
+			tooltip="closing body tag">&lt;/tbody&gt;</parameter>
+		<parameter id="q_table_wrapper_close" label="Question table tag close:" required="false"
+			tooltip="closing table tag">&lt;/table&gt;</parameter>
+			
+    </parameters>
+    <handler name="kinetic_request_submission_format_answers_html" version="5">
+	    <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="start">&lt;%= @parameters['start'] %&gt;</parameter>
+            <parameter name="end">&lt;%= @parameters['end'] %&gt;</parameter>
+            <parameter name="include">&lt;%= @parameters['include'] %&gt;</parameter>
+            <parameter name="exclude">&lt;%= @parameters['exclude'] %&gt;</parameter>		
+            <parameter name="csrvId">&lt;%= @parameters['csrvId'] %&gt;</parameter>
+			<parameter name="link">&lt;%= @parameters['link'] %&gt;</parameter>
+			<parameter name="template">&lt;%= @parameters['template'] %&gt;</parameter>
+			<parameter name="webServer">&lt;%= @parameters['webServer'] %&gt;</parameter>
+			<parameter name="h_table_structure">&lt;%= @parameters['h_table_structure'] %&gt;</parameter>
+			<parameter name="q_table_wrapper_open">&lt;%= @parameters['q_table_wrapper_open'] %&gt;</parameter>
+			<parameter name="q_tbody_wrapper_open">&lt;%= @parameters['q_tbody_wrapper_open'] %&gt;</parameter>
+			<parameter name="q_tr_wrapper_open">&lt;%= @parameters['q_tr_wrapper_open'] %&gt;</parameter>
+			<parameter name="q_td_qlabel_wrapper_open">&lt;%= @parameters['q_td_qlabel_wrapper_open'] %&gt;</parameter>
+			<parameter name="q_td_qlabel_wrapper_close">&lt;%= @parameters['q_td_qlabel_wrapper_close'] %&gt;</parameter>
+			<parameter name="q_td_qanswer_wrapper_open">&lt;%= @parameters['q_td_qanswer_wrapper_open'] %&gt;</parameter>
+			<parameter name="q_td_qanswer_wrapper_close">&lt;%= @parameters['q_td_qanswer_wrapper_close'] %&gt;</parameter>
+			<parameter name="q_tr_wrapper_close">&lt;%= @parameters['q_tr_wrapper_close'] %&gt;</parameter>
+			<parameter name="q_tbody_wrapper_close">&lt;%= @parameters['q_tbody_wrapper_close'] %&gt;</parameter>
+			<parameter name="q_table_wrapper_close">&lt;%= @parameters['q_table_wrapper_close'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="result"/>
+		<result name="textresult"/>
+    </results>
+</taskDefinition>

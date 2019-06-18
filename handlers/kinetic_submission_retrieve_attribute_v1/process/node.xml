@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_submission_retrieve_attribute" name="Kinetic Submission Retrieve Attribute" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves the Kinetic Request base request with the specified values</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+<parameters>
+    <parameter id="submission_id" required="true" label="Submission ID" tooltip="Instance ID of the Submission to Retrieve"/>
+    <parameter id="attribute_name" required="true" label="Attribute Field Name" tooltip="Field name to Retrieve"/>
+
+</parameters>
+<handler name="kinetic_submission_retrieve_attribute" version="1">
+    <infos>
+        <info name="server">&lt;%= @info['server'] %&gt;</info>
+        <info name="username">&lt;%= @info['username'] %&gt;</info>
+        <info name="password">&lt;%= @info['password'] %&gt;</info>
+        <info name="port">&lt;%= @info['port'] %&gt;</info>
+        <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+        <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+        <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+    </infos>
+    <parameters>
+    <parameter name="submission_id">&lt;%= @parameters['submission_id'] %&gt;</parameter>
+    <parameter name="attribute_name">&lt;%= @parameters['attribute_name'] %&gt;</parameter>
+    </parameters>
+</handler>
+<results format="xml">
+    <result name="attribute_value"/>
+</results>
+</taskDefinition>

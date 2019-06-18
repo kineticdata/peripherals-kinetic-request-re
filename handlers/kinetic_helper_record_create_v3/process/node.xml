@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_helper_record_create" name="Kinetic Helper Record Create" schema_version="1.0" version="3">
+    <author>support@kineticdata.com</author>
+    <description>
+        Creates a specific record in the KS_SRV_Helper form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="SurveyInstanceID" label="SurveyInstanceID" required="false"
+            tooltip="SurveyInstanceID"></parameter>
+		<parameter id="CustomerSurveyInstanceID" label="CustomerSurveyInstanceID" required="false"
+            tooltip="CustomerSurveyInstanceID"></parameter>
+		<parameter id="Character Field1" label="Character Field1" required="false"
+            tooltip="Character Field1"></parameter>
+		<parameter id="Character Field2" label="Character Field2" required="false"
+            tooltip="Character Field2"></parameter>
+		<parameter id="Character Field3" label="Character Field3" required="false"
+            tooltip="Character Field3"></parameter>
+		<parameter id="Character Field4" label="Character Field4" required="false"
+            tooltip="Character Field4"></parameter>
+		<parameter id="Character Field5" label="Character Field5" required="false"
+            tooltip="Character Field5"></parameter>
+		<parameter id="Character Field6" label="Character Field6" required="false"
+            tooltip="Character Field6"></parameter>
+		<parameter id="Character Field7" label="Character Field7" required="false"
+            tooltip="Character Field7"></parameter>
+		<parameter id="Character Field8" label="Character Field8" required="false"
+            tooltip="Character Field8"></parameter>
+		<parameter id="Character Field9" label="Character Field9" required="false"
+            tooltip="Character Field9"></parameter>
+		<parameter id="Character Field10" label="Character Field10" required="false"
+            tooltip="Character Field10"></parameter>
+		<parameter id="Character Field11" label="Character Field11" required="false"
+            tooltip="Character Field11"></parameter>
+		<parameter id="Character Field12" label="Character Field12" required="false"
+            tooltip="Character Field12"></parameter>
+		<parameter id="Character Field13" label="Character Field13" required="false"
+            tooltip="Character Field13"></parameter>
+		<parameter id="Character Field14" label="Character Field14" required="false"
+            tooltip="Character Field14"></parameter>
+		<parameter id="Index Field1" label="Index Field1" required="false"
+            tooltip="Index Field1"></parameter>
+		<parameter id="Index Field2" label="Index Field2" required="false"
+            tooltip="Index Field2"></parameter>
+		<parameter id="Index Field3" label="Index Field3" required="false"
+            tooltip="Index Field3"></parameter>
+		<parameter id="Integer Field1" label="Integer Field1" required="false"
+            tooltip="Integer Field1"></parameter>
+		<parameter id="Integer Field2" label="Integer Field2" required="false"
+            tooltip="Integer Field2"></parameter>
+		<parameter id="Integer Field3" label="Integer Field3" required="false"
+            tooltip="Integer Field3"></parameter>
+		<parameter id="Integer Field4" label="Integer Field4" required="false"
+            tooltip="Integer Field4"></parameter>
+		<parameter id="Integer Field5" label="Integer Field5" required="false"
+            tooltip="Integer Field5"></parameter>
+		<parameter id="Integer Field6" label="Integer Field6" required="false"
+            tooltip="Integer Field6"></parameter>
+		<parameter id="Date Field1" label="Date Field1" required="false"
+            tooltip="Date Field1"></parameter>
+		<parameter id="Date Field2" label="Date Field2" required="false"
+            tooltip="Date Field2"></parameter>
+		<parameter id="Date Field3" label="Date Field3" required="false"
+            tooltip="Date Field3"></parameter>
+		<parameter id="Date Field4" label="Date Field4" required="false"
+            tooltip="Date Field4"></parameter>
+		<parameter id="Date Field5" label="Date Field5" required="false"
+            tooltip="Date Field5"></parameter>
+		<parameter id="Date Field6" label="Date Field6" required="false"
+            tooltip="Date Field6"></parameter>
+		<parameter id="Date Field7" label="Date Field7" required="false"
+            tooltip="Date Field7"></parameter>
+		<parameter id="Date/Time Field1" label="Date/Time Field1" required="false"
+            tooltip="Date/Time Field1"></parameter>
+		<parameter id="Date/Time Field2" label="Date/Time Field2" required="false"
+            tooltip="Date/Time Field2"></parameter>
+		<parameter id="Date/Time Field3" label="Date/Time Field3" required="false"
+            tooltip="Date/Time Field3"></parameter>
+		<parameter id="Date/Time Field4" label="Date/Time Field4" required="false"
+            tooltip="Date/Time Field4"></parameter>
+		<parameter id="Date/Time Field5" label="Date/Time Field5" required="false"
+            tooltip="Date/Time Field5"></parameter>
+		<parameter id="Date/Time Field6" label="Date/Time Field6" required="false"
+            tooltip="Date/Time Field6"></parameter>
+		<parameter id="Date/Time Field7" label="Date/Time Field7" required="false"
+            tooltip="Date/Time Field7"></parameter>
+		<parameter id="Time Field1" label="Time Field1" required="false"
+            tooltip="Time Field1"></parameter>
+		<parameter id="Time Field2" label="Time Field2" required="false"
+            tooltip="Time Field2"></parameter>
+		<parameter id="Time Field3" label="Time Field3" required="false"
+            tooltip="Time Field3"></parameter>
+		<parameter id="Time Field4" label="Time Field4" required="false"
+            tooltip="Time Field4"></parameter>
+		<parameter id="Time Field5" label="Time Field5" required="false"
+            tooltip="Time Field5"></parameter>
+		<parameter id="Time Field6" label="Time Field6" required="false"
+            tooltip="Time Field6"></parameter>
+		<parameter id="Time Field7" label="Time Field7" required="false"
+            tooltip="Time Field7"></parameter>
+    </parameters>
+    <handler name="kinetic_helper_record_create" version="3">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <fields>
+            <field name='Status'>Active</field>
+			<field name='SurveyInstanceID'>&lt;%=@parameters['SurveyInstanceID']%&gt;</field>
+			<field name='CustomerSurveyInstanceID'>&lt;%=@parameters['CustomerSurveyInstanceID']%&gt;</field>
+			<field name='Character Field1'>&lt;%=@parameters['Character Field1']%&gt;</field>
+			<field name='Character Field2'>&lt;%=@parameters['Character Field2']%&gt;</field>
+			<field name='Character Field3'>&lt;%=@parameters['Character Field3']%&gt;</field>
+			<field name='Character Field4'>&lt;%=@parameters['Character Field4']%&gt;</field>
+			<field name='Character Field5'>&lt;%=@parameters['Character Field5']%&gt;</field>
+			<field name='Character Field6'>&lt;%=@parameters['Character Field6']%&gt;</field>
+			<field name='Character Field7'>&lt;%=@parameters['Character Field7']%&gt;</field>
+			<field name='Character Field8'>&lt;%=@parameters['Character Field8']%&gt;</field>
+			<field name='Character Field9'>&lt;%=@parameters['Character Field9']%&gt;</field>
+			<field name='Character Field10'>&lt;%=@parameters['Character Field10']%&gt;</field>
+			<field name='Character Field11'>&lt;%=@parameters['Character Field11']%&gt;</field>
+			<field name='Character Field12'>&lt;%=@parameters['Character Field12']%&gt;</field>
+			<field name='Character Field13'>&lt;%=@parameters['Character Field13']%&gt;</field>
+			<field name='Character Field14'>&lt;%=@parameters['Character Field14']%&gt;</field>
+			<field name='Index Field1'>&lt;%=@parameters['Index Field1']%&gt;</field>
+			<field name='Index Field2'>&lt;%=@parameters['Index Field2']%&gt;</field>
+			<field name='Index Field3'>&lt;%=@parameters['Index Field3']%&gt;</field>
+			<field name='Integer Field1'>&lt;%=@parameters['Integer Field1']%&gt;</field>
+			<field name='Integer Field2'>&lt;%=@parameters['Integer Field2']%&gt;</field>
+			<field name='Integer Field3'>&lt;%=@parameters['Integer Field3']%&gt;</field>
+			<field name='Integer Field4'>&lt;%=@parameters['Integer Field4']%&gt;</field>
+			<field name='Integer Field5'>&lt;%=@parameters['Integer Field5']%&gt;</field>
+			<field name='Integer Field6'>&lt;%=@parameters['Integer Field6']%&gt;</field>
+			<field name='Date Field1'>&lt;%=@parameters['Date Field1']%&gt;</field>
+			<field name='Date Field2'>&lt;%=@parameters['Date Field2']%&gt;</field>
+			<field name='Date Field3'>&lt;%=@parameters['Date Field3']%&gt;</field>
+			<field name='Date Field4'>&lt;%=@parameters['Date Field4']%&gt;</field>
+			<field name='Date Field5'>&lt;%=@parameters['Date Field5']%&gt;</field>
+			<field name='Date Field6'>&lt;%=@parameters['Date Field6']%&gt;</field>
+			<field name='Date Field7'>&lt;%=@parameters['Date Field7']%&gt;</field>
+			<field name='Date/Time Field1'>&lt;%=@parameters['Date/Time Field1']%&gt;</field>
+			<field name='Date/Time Field2'>&lt;%=@parameters['Date/Time Field2']%&gt;</field>
+			<field name='Date/Time Field3'>&lt;%=@parameters['Date/Time Field3']%&gt;</field>
+			<field name='Date/Time Field4'>&lt;%=@parameters['Date/Time Field4']%&gt;</field>
+			<field name='Date/Time Field5'>&lt;%=@parameters['Date/Time Field5']%&gt;</field>
+			<field name='Date/Time Field6'>&lt;%=@parameters['Date/Time Field6']%&gt;</field>
+			<field name='Date/Time Field7'>&lt;%=@parameters['Date/Time Field7']%&gt;</field>
+			<field name='Time Field1'>&lt;%=@parameters['Time Field1']%&gt;</field>
+			<field name='Time Field2'>&lt;%=@parameters['Time Field2']%&gt;</field>
+			<field name='Time Field3'>&lt;%=@parameters['Time Field3']%&gt;</field>
+			<field name='Time Field4'>&lt;%=@parameters['Time Field4']%&gt;</field>
+			<field name='Time Field5'>&lt;%=@parameters['Time Field5']%&gt;</field>
+			<field name='Time Field6'>&lt;%=@parameters['Time Field6']%&gt;</field>
+			<field name='Time Field7'>&lt;%=@parameters['Time Field7']%&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml">
+	        <result name="Entry Id"/>
+    </results>
+</taskDefinition>

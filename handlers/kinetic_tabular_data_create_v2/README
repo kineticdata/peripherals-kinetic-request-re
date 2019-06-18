@@ -1,0 +1,86 @@
+== Kinetic Table Data Create
+Saves the data from a json string created from an HTML table into a Remedy
+form for future reporting and/or processing.
+
+To see how to create the data to feed into this handler, please see the
+community article here 
+http://community.kineticdata.com/10_Kinetic_Request/Solutions/Putting_Answers_into_YUI_Tables.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+[JSON String]
+	Serialized table data in JSON format
+[Table Name]
+	Identifier for the table
+[Originating ID]
+	Associated Request GUID
+[Template Name]
+	The originating Request Template name
+[Template Instance ID]
+	The originating Request Template ID
+
+==== Sample Configuration
+JSON String::			<%=@answers['contactTableJSON']%>
+Table Name::			Contact Table
+Originating ID::		<%=@dataset['Originating ID']%>
+Template Name::			<%=@dataset['Survey Template Name']%>
+Template Instance ID::	<%=@dataset['Survey Instance ID']%>
+
+==== Sample Configuration 2
+JSON String::			[
+						  {"FirstName":"John",
+						   "LastName":"Doe",
+						   "EmailAddress":"john.doe@test.com",
+						   "OfficePhone":"888-777-6666",
+						   "CellPhone":"666-777-8888",
+						   "ContactType":"Primary Contact"},
+						  {"FirstName":"JuneBug",
+						   "LastName":"Whatever",
+						   "EmailAddress":"jwhatever@test.com",
+						   "OfficePhone":"666-777-8888",
+						   "CellPhone":"555-666-7777",
+						   "ContactType":"Alternate Contact"}
+						]
+Table Name::			Contact Table
+Originating ID::		AG0050569A648C7lEqUA_lslAwSa0B
+Template Name::			Contact Updates
+Template Instance ID::	KSfb02da8bec9b1ca832597c3562a6e124b
+
+=== Results
+[Table Data Request Id List]
+  An XML list of the data rows/records created.
+[Table Data Instance Id List]
+  An XML list of the data rows/records created.
+[Table Data Row Count]
+  The count of the number of data rows saved/records created.
+
+=== Detailed Description
+Saves the data from a json string created from an HTML table into a Remedy
+form for future reporting and/or processing. To see how to create the data 
+to feed into this handler, please see the community article here: 
+http://community.kineticdata.com/10_Kinetic_Request/Solutions/Putting_Answers_into_YUI_Tables.
+
+Each row in the table will be saved as one record in this form. One result 
+is the row count of the rows of data saved. The other is the instance IDs 
+of the record for each row. This allows for looping through the rows without
+having to do a find handler if you want to loop through every row in the table.
+
+The format of the XML of request IDs returned is:
+
+<request_ids>
+	<request_id>000000000000001</request_id>
+	<request_id>000000000000002</request_id>
+</request_ids>
+
+The format of the XML of instance IDs returned is:
+
+<instance_ids>
+	<instance_id>AG00505696001CJTK_UQ8h_IBgSCAE</instance_id>
+	<instance_id>AG00505696001CJjK_UQ5CDIBgSyAE</instance_id>
+</instance_ids>
+
+This handler can be used to store data for reporting. The Associated Request GUID
+(Originating ID) is a required field, but the Template Name and Instance ID are 
+not. Note that this data may be required by your reporting process if you want
+to report on data by template, rather than just by individual record.

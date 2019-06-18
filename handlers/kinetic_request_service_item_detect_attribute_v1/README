@@ -1,0 +1,22 @@
+== KineticRequest_ServiceItem_DetectAttribute
+  This handler checks to see if a specific attribute is defined for the given
+  service item.
+  
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will query for the given
+  attribute
+[Service Item Name]
+  The name of the service item this handler will query for the given attribute
+[Attribute Name]
+  The name of the attribute that this handler will query for
+
+==== Sample Configuration
+Catalog Name::          KURL Catalog
+Service Item Name::     Test Service Item
+Attribute Name::        Category
+
+=== Results
+[Exists]
+  A "Yes" or "No" value depending on whether the attribute is defined for the
+  given service item.

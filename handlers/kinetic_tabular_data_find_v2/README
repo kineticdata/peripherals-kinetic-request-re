@@ -1,0 +1,112 @@
+== Kinetic Tabular Data Find
+Returns the request ids (field 1) and instance ids (field 179)
+for all records in the CUSTOM:KS_SRV_TableData_base form that match the provided query.
+
+For more information, see the Detailed Description section below.
+
+=== Parameters
+
+[SurveyInstanceID]
+	Survey Instance ID
+[Survey Template Name]
+	Survey Template Name
+[Originating ID]
+	Associated Request GUID
+[Table Name]
+	Table Name
+[Value1]
+	Value in Column 1
+[Value2]
+	Value in Column 2
+[Value3]
+	Value in Column 3
+[Value4]
+	Value in Column 4
+[Value5]
+	Value in Column 5
+[Value6]
+	Value in Column 6
+[Value7]
+	Value in Column 7
+[Value8]
+	Value in Column 8
+[Value9]
+	Value in Column 9
+[Value10]
+	Value in Column 10
+[Value11]
+	Value in Column 11
+[Value12]
+	Value in Column 12
+[Value13]
+	Value in Column 13
+[Value14]
+	Value in Column 14
+[Value15]
+	Value in Column 15
+[Value16]
+	Value in Column 16
+[Value17]
+	Value in Column 17
+[Value18]
+	Value in Column 18
+[Value19]
+	Value in Column 19
+[Value20]
+	Value in Column 20
+
+=== Sample Configuration
+SurveyInstanceID::	
+Survey Template Name::	
+Originating ID::	<=%dataset['Originating ID']%>
+Table Name::	ContactTable
+Value1::	
+Value2::	
+Value3::	
+Value4::	
+Value5::	
+Value6::	Alternate Contact
+Value7::	
+Value8::	
+Value9::	
+Value10::	
+Value11::	
+Value12::	
+Value13::	
+Value14::	
+Value15::	
+Value16::	
+Value17::	
+Value18::	
+Value19::	
+Value20::	
+
+=== Results
+[RequestIdList]
+  The request ids (field 1) of the updated record.
+  
+[InstanceIdList]
+  The instance ids (field 179) of the updated record.
+
+=== Detailed Description
+This handler returns the request ids (field 1) for all records in 
+the CUSTOM:KS_SRV_TableData_base form that match the provided query.  This is returned
+in XML format (like below) for use in loops.
+
+<Request_Ids>
+	<RequestId>000000000000013</RequestId>
+	<RequestId>000000000000381</RequestId>
+	<RequestId>000000000002582</RequestId>
+</Request_Ids>
+
+It also returns the instance ids (field 179) in a similar format:
+
+<Instance_Ids>
+	<InstanceId>AG0050569A648CU5tSUAUcZMAgc8AC</InstanceId>
+	<InstanceId>AG0050569A648ClZtSUAkMVNAgVcYC</InstanceId>
+	<InstanceId>AG0050569A648CMZtSUAKUBMAgMrkC</InstanceId>
+</Instance_Ids>
+
+Note that this is not necessary if you want every row out of a table 
+that is saved in the same tree. In that case, the results of the 
+table data create handler can be used.

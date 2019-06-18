@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_answer_update" name="Kinetic Request Answer Update" schema_version="1.0" version="5">
+    <author>support@kineticdata.com</author>
+    <description>Creates a Submission Answer</description>
+    <helpurl/>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+<parameters>
+    <parameter id="SubmissionInstanceID" required="true" label="Submission Instance ID" tooltip="Submission Instance ID"/>
+    <parameter id="TemplateName" required="true" label="Survey Template Name" tooltip="Survey Template Name"/>
+    <parameter id="QuestionValue" required="true" label="Answer Value" tooltip="Answer value"/>    
+    <parameter id="QuestionName" required="true" label="Question Label" tooltip="Question Label"/>
+</parameters>
+<handler name="kinetic_request_answer_update" version="5">
+    <infos>
+        <info name="server">&lt;%= @info['server'] %&gt;</info>
+        <info name="username">&lt;%= @info['username'] %&gt;</info>
+        <info name="password">&lt;%= @info['password'] %&gt;</info>
+        <info name="port">&lt;%= @info['port'] %&gt;</info>
+        <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+        <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+		<info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+    </infos>
+<parameters>
+     <parameter name="SubmissionInstanceID">&lt;%=@parameters['SubmissionInstanceID']%&gt;</parameter>
+     <parameter name="QuestionValue">&lt;%=@parameters['QuestionValue']%&gt;</parameter>
+     <parameter name="TemplateName">&lt;%=@parameters['TemplateName']%&gt;</parameter>
+     <parameter name="QuestionName">&lt;%=@parameters['QuestionName']%&gt;</parameter>
+</parameters>
+<fields>
+    <field name="CustomerSurveyInstanceID">&lt;%=@parameters['SubmissionInstanceID']%&gt;</field>
+</fields>
+</handler>
+<results format="xml">
+    <result name="Value"/>
+	<result name="Entry Id"/>
+</results>
+</taskDefinition>

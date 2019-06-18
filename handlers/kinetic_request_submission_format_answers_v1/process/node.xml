@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_format_answers" name="Kinetic Request Submission Format Answers" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Builds a simple result string by formatting a specified subset of answers for the source Kinetic Request submission.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/kinetic_request_submission_format_answers/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="start" label="Starting Question:" required="false"
+            tooltip="The menu label of the first question that should be formatted.  If this is left blank, the first question on the service item will be used."/>
+        <parameter id="end" label="Ending Question:" required="false"
+            tooltip="The menu label of the last question that should be formatted.  If this is left blank, the last question on the service item will be used."/>
+        <parameter id="include" label="Included Questions:" required="false"
+            tooltip="A comma separated list of question menu labels that should be explicitely included in the question list.  Questions included in this list will be included even if they do not exist between the starting and ending questions.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+        <parameter id="exclude" label="Excluded Questions:" required="false"
+            tooltip="A comma separated list of question menu labels that should be explicitely excluded in the question list.  Questions included in this list will be excluded even if they exist between the starting and ending questions or are included in the 'Included Question' parameter.  Whitespace matters; ensure there are no spaces after a comma separating the menu labels (unless the question menu label includes a preceding space)."/>
+    </parameters>
+    <handler name="kinetic_request_submission_format_answers" version="1">
+        <parameters>
+            <parameter name="start">&lt;%= @parameters['start'] %&gt;</parameter>
+            <parameter name="end">&lt;%= @parameters['end'] %&gt;</parameter>
+            <parameter name="include">&lt;%= @parameters['include'] %&gt;</parameter>
+            <parameter name="exclude">&lt;%= @parameters['exclude'] %&gt;</parameter>
+        </parameters>
+        <answers>&lt;% @answers.each do |name, value| %&gt;
+            <answer name="&lt;%= name %&gt;">&lt;%= value %&gt;</answer>&lt;% end %&gt;
+        </answers>
+    </handler>
+    <results format="xml">
+        <result name="result"/>
+    </results>
+</taskDefinition>

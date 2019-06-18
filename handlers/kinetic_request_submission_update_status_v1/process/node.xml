@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_update_status" name="Kinetic Request Submission Update Status" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Updates the Validation Status, the status that is displayed to the end
+        user, of the specified Kinetic Request submission record.
+    </description>
+    <helpurl>http://community.kineticdata.com/handler/kinetic_request_submission_update_status/1</helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="validation_status" label="Validation Status:" required="true"
+            tooltip="The value the Validation Status field on the specified Kinetic Request submission record will be set to."></parameter>
+        <parameter id="submission_id" label="Submission Id:" required="true"
+            tooltip="The instance id of the Kinetic Request submission to be updated."></parameter>
+    </parameters>
+    <handler name="kinetic_request_submission_update_status" version="1">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="submission_id">&lt;%= @parameters['submission_id'] %&gt;</parameter>
+        </parameters>
+        <fields>
+            <field name='ValidationStatus'>&lt;%=@parameters['validation_status']%&gt;</field>
+        </fields>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>

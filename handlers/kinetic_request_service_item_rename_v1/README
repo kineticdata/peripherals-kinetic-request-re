@@ -1,0 +1,15 @@
+== KineticRequest_ServiceItem_Rename
+  This handler renames a given service item.
+
+=== Parameters
+[Catalog Name]
+  The catalog name of the service item this handler will rename
+[Service Item Name]
+  The current name of the service item this handler will rename
+[Service Item Name]
+  The new name that the service item will be given
+
+==== Sample Configuration
+Catalog Name::              KURL Catalog
+Service Item Name::         Test Service Item
+New Service Item Name::     Example Service Item

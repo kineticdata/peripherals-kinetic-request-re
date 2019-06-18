@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_helper_record_retrieve" name="Kinetic Helper Record Retrieve" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>
+        Retrieves a specific record from the KS_SRV_Helper form.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="Request ID" label="Request ID" required="true"
+            tooltip="Enter the Request ID, stored in Request ID of the KS_SRV_Helper form"></parameter>	
+    </parameters>
+    <handler name="kinetic_helper_record_retrieve" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+            <parameter name="Request ID">&lt;%= @parameters['Request ID'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+			<result name='Status'/>
+			<result name='SurveyInstanceID'/>
+			<result name='CustomerSurveyInstanceID'/>
+			<result name='Character Field1'/>
+			<result name='Character Field2'/>
+			<result name='Character Field3'/>
+			<result name='Character Field4'/>
+			<result name='Character Field5'/>
+			<result name='Character Field6'/>
+			<result name='Character Field7'/>
+			<result name='Character Field8'/>
+			<result name='Character Field9'/>
+			<result name='Character Field10'/>
+			<result name='Character Field11'/>
+			<result name='Character Field12'/>
+			<result name='Character Field13'/>
+			<result name='Character Field14'/>
+			<result name='Integer Field1'/>
+			<result name='Integer Field2'/>
+			<result name='Integer Field3'/>
+			<result name='Integer Field4'/>
+			<result name='Integer Field5'/>
+			<result name='Integer Field6'/>
+			<result name='Date Field1'/>
+			<result name='Date Field2'/>
+			<result name='Date Field3'/>
+			<result name='Date Field4'/>
+			<result name='Date Field5'/>
+			<result name='Date Field6'/>
+			<result name='Date Field7'/>
+			<result name='Date/Time Field1'/>
+			<result name='Date/Time Field2'/>
+			<result name='Date/Time Field3'/>
+			<result name='Date/Time Field4'/>
+			<result name='Date/Time Field5'/>
+			<result name='Date/Time Field6'/>
+			<result name='Date/Time Field7'/>
+			<result name='Time Field1'/>
+			<result name='Time Field2'/>
+			<result name='Time Field3'/>
+			<result name='Time Field4'/>
+			<result name='Time Field5'/>
+			<result name='Time Field6'/>
+			<result name='Time Field7'/>
+			<result name='Index Field1'/>
+			<result name='Index Field2'/>
+			<result name='Index Field3'/>
+    </results>
+</taskDefinition>

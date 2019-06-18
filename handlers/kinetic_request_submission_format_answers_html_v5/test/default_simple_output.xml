@@ -1,0 +1,4 @@
+<results>
+    <result name="result" type="Regexp">.*</result>
+	<result name="textresult" type="Regexp">.*</result>
+</results>

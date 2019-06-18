@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="kinetic_request_submission_dataset_retrieve" name="Kinetic Request Submission Dataset Retrieve" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>
+        Returns all dataset values for a given submission. For use inside of subtrees.
+    </description>
+    <helpurl></helpurl>
+    <visible>false</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+		<parameter id="Submission ID" label="Submission ID" required="true"
+            tooltip="CustomerSurveyInstanceId or CustomerSurveyID on KS_CustomerSurvey"></parameter>
+    </parameters>
+    <handler name="kinetic_request_submission_dataset_retrieve" version="2">
+        <infos>
+            <info name="server">&lt;%= @info['server'] %&gt;</info>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="port">&lt;%= @info['port'] %&gt;</info>
+            <info name="prognum">&lt;%= @info['prognum'] %&gt;</info>
+            <info name="authentication">&lt;%= @info['authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+		<parameters>
+			<parameter name='Submission ID'>&lt;%=@parameters['Submission ID']%&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+	        <result name="#MENU PLACE HOLDER#"/>
+    </results>
+</taskDefinition>

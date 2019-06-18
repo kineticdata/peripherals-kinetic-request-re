@@ -1,0 +1,1 @@
+java -jar kinetic-task.jar -test-handler=C:\Handlers\kinetic_submission_update_v1

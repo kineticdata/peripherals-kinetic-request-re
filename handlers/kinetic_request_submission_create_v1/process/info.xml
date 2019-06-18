@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file contains a list of all configurable values used by the task node.
+
+The name of the parameter is defined by applying the 'name' attribute to the
+info tag.  For example, to define a parameter named 'username' add the
+following line:
+  <info name="username" description="Remedy Login Name"></info>
+
+Default values may be defined by placing the value of the parameter
+within the info tags.  For example, to define a parameter named 'username'
+with a default value of 'Demo' add the following line:
+  <info name="username" description="Remedy Login Name">Demo</info>
+-->
+<taskInfo version="1.0">
+  <info name="server"  description="Remedy Server Name or IP Address"></info>
+  <info name="username" description="Remedy Login Name"></info>
+  <info name="password"  type="encrypted" description="Remedy Password"></info>
+  <info name="port" description="Remedy TCP Port">0</info>
+  <info name="prognum" description="Remedy RPC Prognum">0</info>
+  <info name="authentication" description="Remedy Authentication String"></info>
+  <info name="enable_debug_logging" description="Enable debug logging if the value is set to 'Yes'.">No</info>
+</taskInfo>

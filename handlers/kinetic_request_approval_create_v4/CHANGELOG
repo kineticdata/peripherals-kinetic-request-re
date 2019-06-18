@@ -1,0 +1,29 @@
+KineticRequest_Approval_Create_V4 (2014-12-08)
+* Added new 5.2 fields. NOTE: This is NOT backwards compatible.
+
+KineticRequest_Approval_Create_V3 (2013-08-17)
+* Removed 'Approval Question Label', 'Approval Value', and 'Denial Comments Label'
+  parameters.  These were in place for old Kinetic Request workflow that
+  automatically created task triggers when the approvals were completed.
+  Now the task engine is used to create these triggers therefore these values
+  are obsolete.
+* Removed the 'Notes For Customer' parameter, it is not commonly used in newer
+  implementations.
+* The 'Message Template Name' parameter is no longer required when configuring
+  this handler.  If no message template is specified the Approval record
+  will need to be set to a "Sent" status manually for most portal pages to
+  work properly.
+
+KineticRequest_Approval_Create_V2 (2010-03-18)
+* Set the Approval Template Catalog Name parameter to default to the current
+  catalog, but it can also be changed to use an approval form from another
+  catalog.
+* Added additional 'Validation Status' deferred variable to the node.xml file to
+  represent the value of the completed approval submission validation status.
+* Modified how OriginatingID and OriginatingID_Display are retrieved so that
+  OriginatingID_Display is properly retrieved.
+* Remapped the 'Form' attribute to properly populate based on the
+  'Suvey_Template_Name' of the originating request.
+
+KineticRequest_Approval_Create_V1 (2010-12-01)
+* Initial version.  See README for details.

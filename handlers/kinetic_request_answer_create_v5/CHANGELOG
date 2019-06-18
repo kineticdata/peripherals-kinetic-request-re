@@ -1,0 +1,19 @@
+kinetic_request_answer_create V5 (2015-12-18)
+* 5.2 version. Handles 5.2 unlimited answers.
+  
+kinetic_request_answer_create V4 (2015-9-4)
+* Fixed issue with not handling templates of the same name
+  across catalogs
+
+kinetic_request_answer_create V3 
+
+kinetic_request_answer_create V2 - Revised (2013-2-25)
+* Corrected issue with AnswerViewer fields failing update when 
+  answer is greated than 255 characters.
+
+kinetic_request_answer_create V2  (2012-3-18)
+* Changed parameters to accept Question Name rather than Question Instance ID
+* Updated Creation routine to also update Base record if the Question is Mapped.
+
+kinetic_request_answer_create V1 
+* Initial version.  See README for details.
