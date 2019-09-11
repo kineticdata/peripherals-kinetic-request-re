@@ -6,3 +6,6 @@ categories:
 - CRM
 - DevOps
 display-name: Kinetic Request RE
+description: An Enterprise Request Managment system built on the BMC Remedy Platform.
+manufacturer: Kinetic Data
+product: Kinetic Request RE
