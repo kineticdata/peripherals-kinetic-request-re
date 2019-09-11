@@ -1,3 +1,3 @@
 ![Source Icon](thumbnail.png)
 # Kinetic Request RE
-Handlers and sources for interacting with Kinetic Request Remedy Edition (RE).
+An Enterprise Request Managment system built on the BMC Remedy Platform.
